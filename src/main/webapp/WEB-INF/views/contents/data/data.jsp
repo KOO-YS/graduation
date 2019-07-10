@@ -47,6 +47,11 @@
 
 <section class="site-section">
       <div class="container" style="margin-top:50px;">
+      	<div class="row mb-5">
+          <div class="col-md-5 text-left">
+            <h2 class="section-title mb-3">자료마당</h2>
+          </div>
+        </div>
         <div class="row">
           <!-- 사이드바 -->
           <div class="col-md-3 sidebar bg-light">

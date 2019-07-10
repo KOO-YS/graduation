@@ -179,7 +179,7 @@
                   <div>
                     <h3>경회루 특별관람 예약</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis consect.</p>
-                    <p class="mb-0"><a href="/tour">예약하기</a></p>
+                    <p class="mb-0"><a href="/tour" class="btn btn-primary btn-sm">예약하기</a></p>
                   </div>
                 </div>
               </div>

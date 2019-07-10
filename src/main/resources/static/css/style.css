@@ -1690,13 +1690,14 @@ h1, h2, h3, h4, h5,
   margin-bottom: 30px;
   padding: 25px;
   font-size: 15px;
+  font-weight: 600;
   width: 100%;
   float: left;
   background: #fff; }
   .sidebar-box *:last-child {
     margin-bottom: 0; }
   .sidebar-box h3 {
-    font-size: 18px;
+    font-size: 22px;
     margin-bottom: 15px; }
 
 .categories li, .sidelink li {

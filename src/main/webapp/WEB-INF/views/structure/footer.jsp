@@ -1,5 +1,55 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
+<div class="modal fade sitemap-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg" style="height: 70%;">
+		    <div class="modal-content">
+			    <div class="modal-body">
+		    	<button type="button" class="close" id="close-botton" data-dismiss="modal" aria-label="Close">	
+                    <span aria-hidden="true" class="close-botton">&times;</span>
+                </button>
+			    <p class="sm-menu-header">SITEMAP</p>
+			    	<div class="sm-menu">
+			    		<div class="sm-menu-title">관람안내</div>
+			    		<div class="sm-menu-list">
+				    		<ul>
+					    		<li><a href='/discussion#disc-section01'>test</a></li>
+					    		<li><a href='/discussion#disc-section02'>tse</a></li>
+					    	</ul>
+			    		</div>
+			    	</div>
+			    	
+			    	<div class="sm-menu">
+						<div class="sm-menu-title">관람예약/신청</div>
+			    		<div class="sm-menu-list">
+				    		<ul>
+					    		<li><a href='/discussion#disc-section01'>test</a></li>
+					    		<li><a href='/discussion#disc-section02'>tse</a></li>
+					    	</ul>
+			    		</div>
+			    	</div>
+			    	<div class="sm-menu">
+			    		<div class="sm-menu-title">자료마당</div>
+			    		<div class="sm-menu-list">
+				    		<ul>
+					    		<li><a href="#cowork-1" onclick="location.href='/cowork#cowork-1'" data-toggle="tab"><spring:message code="sub-header-cowork-production-publication"/></a></li>
+					    		<li><a href="#cowork-2" onclick="location.href='/cowork#cowork-2'" data-toggle="tab"><spring:message code="sub-header-cowork-distribution-platform"/></a></li>
+					    	</ul>
+			    		</div>
+			    	</div>
+			    	<div class="sm-menu">
+			    		<div class="sm-menu-title">경복궁 관리소</div>
+			    		<div class="sm-menu-list">
+				    		<ul>
+					    		<li><a href='/discussion#disc-section01'>test</a></li>
+					    		<li><a href='/discussion#disc-section02'>tse</a></li>
+					    	</ul>
+			    		</div>
+			    	</div>
+			    </div>
+		    </div>
+		</div>
+	</div>
+	
 <footer class="site-footer">
       <div class="container">
         <div class="row">
@@ -17,8 +67,8 @@
               <div class="col-md-3 ml-auto">
                 <h2 class="footer-heading mb-4">Quick Links</h2>
                 <ul class="list-unstyled">
+                  <li><a href="#" data-toggle="modal" data-target=".sitemap-modal-lg">Site Map</a></li>
                   <li><a href="#">About Us</a></li>
-                  <li><a href="#">Services</a></li>
                   <li><a href="#">Testimonials</a></li>
                   <li><a href="#">Contact Us</a></li>
                 </ul>

@@ -61,4 +61,10 @@ public class ContentController {
 	public String goToAbout() {
 		return "contents/about/about";
 	}
+	
+	/* 관리자 페이지 */
+	@RequestMapping("/admin/index")
+	public String adminPage() {
+		return "admin/index";
+	}
 }
