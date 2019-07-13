@@ -27,7 +27,9 @@
     <link rel="stylesheet" href="/css/aos.css">
 
     <link rel="stylesheet" href="/css/style.css">
-    
+   	<!-- datepicker -->
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
   </head>
   <body>
   
@@ -90,9 +92,55 @@
                 </div>
               </div>
             </div>
+            
           </div>
           
         </div>
+	      <div class="row mb-5">
+	      <h3>경회루 특별관람 예약</h3>
+	      </div>
+	      <div class="row mb-5">
+	      	<div class="col-md-3">
+	      		<p>* 예약날짜 선택</p>
+		       	<div id="datepicker"></div>
+	      	</div>
+	      	<div class="col-md-9">	
+				<p style="float:left;">* 2019년 00월 00일 예약 현황</p>
+				<button class="btn btn-primary" style="float:right;">예약 확인 및 취소</button>
+				<table class="table" style="margin-top:60px;">
+				  <thead class="thead-light">
+				    <tr>
+				      <th scope="col">회차</th>
+				      <th scope="col">관람인원</th>
+				      <th scope="col">예약인원</th>
+				      <th scope="col">예약하기</th>
+				    </tr>
+				  </thead>
+				  <tbody>
+				    <tr>
+				      <th scope="row">1</th>
+				      <td>Mark</td>
+				      <td>Otto</td>	
+				      <td><button class="btn">예약하기</button></td>
+				    </tr>
+				    <tr>
+				      <th scope="row">2</th>
+				      <td>Jacob</td>
+				      <td>Thornton</td>
+				      <td>@fat</td>
+				    </tr>
+				  </tbody>
+				</table>
+	      	</div>
+	      </div>
+	      <div class="row mb-5">
+	      	<div class="col-md-12">
+		      	<h3>경회루 특별관람 예약</h3>
+		      	<p>- 개방시간 : 2019년 4월 ~ 10월(7개월간)</p>
+				<p>- 관람요금 : 추가요금 없이 관람(경복궁입장권 구매 후 관람)</p>
+				<p>- 관람시간 및 예약방법</p>
+			</div>
+	      </div>
       </div>
     </section>
 
@@ -116,6 +164,59 @@
 
   
   <script src="js/main.js"></script>
-    
+<!-- datepicker -->    
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+var array = ["2019-07-14","2019-07-15","2019-07-16"];
+$(document).ready(function(){
+	$('#datepicker').datepicker({
+	    beforeShowDay: function(date){
+	    	 var string = jQuery.datepicker.formatDate('yy-mm-dd', date);
+	        return [ array.indexOf(string) == -1 ]
+	    }
+	});
+});
+	
+
+</script>
+<!-- <script>
+$(document).ready(function(){
+	var dt = new Date();
+	var y = dt.getFullYear();
+	var m = dt.getMonth()+1;
+	var d = dt.getDate()+1;
+	var h = dt.getHours();
+
+	if(h >= 15) d++;
+	mindt = y+"-"+m+"-"+d;
+
+	$("#datepicker").datepicker({
+		changeYear: true,
+		changeMonth: true,
+		dateFormat:"yy-mm-dd",
+		showMonthAfterYear:true,
+		dayNamesMin: ['일','월','화','수','목','금','토'],
+		monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+		minDate: mindt,
+		maxDate: "+10D",
+		onSelect: function(value) {
+			var dt2 = new Date(value);
+			var w = dt2.getDay();
+			if(w == 6 || w == 0) {
+				alert('토요일, 일요일에는 퇴사를 할 수 없습니다.');
+			}
+		},
+		onClose: function(value) {
+			var dt2 = new Date(value);
+			var w = dt2.getDay();
+			if(w == 6 || w == 0) {
+				$("#datepicker").datepicker("setDate", "");
+			}
+
+		}
+	});
+});
+</script> -->
   </body>
 </html>
