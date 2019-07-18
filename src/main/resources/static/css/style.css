@@ -1721,6 +1721,9 @@ h1, h2, h3, h4, h5,
     color: #000;
     font-style: italic; }
 
+.blog-content blockquote {
+	padding: 30px;
+}
 .comment-form-wrap {
   clear: both; }
 

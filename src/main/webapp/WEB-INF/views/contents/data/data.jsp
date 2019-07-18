@@ -74,10 +74,10 @@
           </div>
           <!-- 사이드바 끝 -->
         <!-- 포스트 -->	
-        	<!-- <div class="tab-content">
+        	<div class="tab-content">
 			    <div class="tab-pane fade in active" id="cowork-1">ㅅㄷㄴㅅ</div>
 			    <div class="tab-pane fade" id="cowork-2">ㄷㄷㄷㄷㄷ</div>
-			</div> -->			   
+			</div>			   
           <div class="col-md-9 blog-content">
             <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda nihil aspernatur nemo sunt, qui, harum repudiandae quisquam eaque dolore itaque quod tenetur quo quos labore?</p>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae expedita cumque necessitatibus ducimus debitis totam, quasi praesentium eveniet tempore possimus illo esse, facilis? Corrupti possimus quae ipsa pariatur cumque, accusantium tenetur voluptatibus incidunt reprehenderit, quidem repellat sapiente, id, earum obcaecati.</p>
