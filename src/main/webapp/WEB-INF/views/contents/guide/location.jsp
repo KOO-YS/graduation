@@ -42,8 +42,8 @@
           </div>
             <div class="col-md-9">
 	          <p class="section-sub-title" style="padding-top:60px;">
-	          	관람규칙/규정
-		       	<b style="font-weight:600; float:right;">메인 > 관람안내 > 관람 규칙 및 규정</b>	
+	          	오시는길
+		       	<b style="font-weight:600; float:right;">메인 > 관람안내 > 오시는길</b>	
 	          </p>
             </div>
         </div>
@@ -53,34 +53,10 @@
           <!-- 사이드바 끝 -->
           <!-- 포스트 -->
           <div class="col-md-9 blog-content">
-          	<!-- <hr> -->
-          	<div class="alert alert-danger" role="alert">
-			  <h5 class="alert-heading">관람하시면서 꼭 준수해 주셔야 할 사항입니다.</h5>
-			  <!-- <hr> -->
-			  <p>모두에게 기분좋은 관람이 될 수 있도록 협조하여 주시기 바랍니다.</p>
-			</div>
-            <p style="font-weight:bold;">궁·능 관람 등에 관한 규정(제정 2019.03.29. 문화재청 궁능유적본부 훈령 제7호) </p>
-            <p>* 문화재 보존·관리 등을 위하여 다음 각 호 중 어느 하나의 해당하는 자에 대하여 관람중지, 관련 물품 보관 또는 입장제한 등의 필요한 조치를 취할 수 있다.</p>
-			<!-- https://www.codingfactory.net/11453
-			https://getbootstrap.com/docs/4.0/components/alerts/ -->
             <blockquote class="bg-light">
-            	<ul>
-            		<li>인화물질 및 무기류(총포, 화약, 도검류 등) 등 위험물 소지자</li>
-            		<li>주류, 각종 야영용품(텐트, 돗자리, 그늘막 등) 및 취사도구 소지자</li>
-            		<li>음식물 및 도시락 등을 섭취하는 자</li>
-            		<li>반려동물과 함께 들어오는 자(다만 장애인복지법 제2조에서 정한 장애인과 함께 들어오는 장애인 보조견은 예외로 한다. 이 경우 ‘장애인 보조견’이라 함은 장애인복지법 제40조 제2항의 ‘장애인 보조견 표지’를 붙인 ‘장애인 보조견’을 말한다.)</li>
-            		<li>운동·놀이기구, 악기, 확성기 및 다른 사람의 관람 또는 문화재의 보존·관리에 지장을 줄 우려가 있는 물건 소지자</li>
-            		<li>음주, 복장, 무속행위, 방언(放言), 사사로운 제사행위, 종교집회, 고성방가, 풍기문란 및 기타 부적절한 행위로 다른 사람의 관람 또는 문화재 보존·관리에 지장을 줄 우려가 있는 자</li>
-            		<li>정당한 사유 없이 관람규정이나 직원의 안내에 따르지 않는 자</li>
-            		<li>경복궁 경내 전 지역은 금연구역으로 하며, 궁능유적기관의 장은 흡연자에 대해 관람중지, 퇴장 등 필요한 조치를 취할 수 있다.</li>
-            	</ul>
+            	<div id="map" style="width:100%;height:350px;"></div>
+            	
             </blockquote>
-
-            <div class="pt-5">
-              <p>Categories:  <a href="#">Design</a>, <a href="#">Events</a>  Tags: <a href="#">#html</a>, <a href="#">#trends</a></p>
-            </div>
-		
-            
           </div>
           <!-- 포스트 끝 -->
         </div>
@@ -91,6 +67,17 @@
 	<c:import url="/WEB-INF/views/structure/footer.jsp"></c:import>
 
   </div> <!-- .site-wrap -->
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=117569877c4f0f88d82995089cb983ae"></script> <!-- 임시키 -->
+<script>
+var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+mapOption = { 
+    center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+    level: 3 // 지도의 확대 레벨
+};
+
+//지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
+var map = new kakao.maps.Map(mapContainer, mapOption); 
+</script>
 
    <script src="/static/js/jquery-3.3.1.min.js"></script>
   <script src="/static/js/jquery-migrate-3.0.1.min.js"></script>

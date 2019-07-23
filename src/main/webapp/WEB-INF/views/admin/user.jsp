@@ -32,7 +32,7 @@
 			        <div class="card-body">
 			            <div class="row">
 			                <div class="col-md-2 border-right">
-			                    <h4>Page name</h4>
+			                    <h4>User Info</h4>
 			                </div>
 			                <div class="col-md-6">
 			                    <button type="button" class="btn btn-sm btn-primary">sample button</button>
@@ -40,48 +40,8 @@
 			                
 			            </div>
 			            <hr>
-			            <!-- <div class="row">
-	        		        <div class="col-md-4 bg-light card-body">
-	        		            <h5>Add New Category</h5>
-	        		            <form>
-	                              <div class="form-group row">
-	                                <label for="text" class="col-12 col-form-label">Name</label> 
-	                                <div class="col-12">
-	                                  <input id="text" name="text" class="form-control here" type="text">
-	                                </div>
-	                              </div>
-	                              <div class="form-group row">
-	                                <label for="slug" class="col-12 col-form-label">Slug</label> 
-	                                <div class="col-12">
-	                                  <input id="slug" name="slug" class="form-control here" type="text">
-	                                  <small>The “slug” is the URL-friendly version of the name. It is usually all lowercase and contains only letters, numbers, and hyphens.</small>
-	
-	                                </div>
-	                              </div>
-	                              <div class="form-group row">
-	                                <label for="parent-category" class="col-12 col-form-label">Parent Category</label> 
-	                                <div class="col-12">
-	                                  <select id="parent-category" name="parent-category" class="custom-select">
-	                                    <option value="">None</option>
-	                                    <option value="uncategorized">Uncategorized</option>
-	                                    <option value="new category">New Category</option>
-	                                  </select>
-	                                </div>
-	                              </div>
-	                              <div class="form-group row">
-	                                <label for="description" class="col-12 col-form-label">Description</label> 
-	                                <div class="col-12">
-	                                  <textarea id="description" name="description" cols="40" rows="4" class="form-control"></textarea>
-	                                </div>
-	                              </div> 
-	                              <div class="form-group row">
-	                                <div class="col-12">
-	                                  <button name="submit" type="submit" class="btn btn-primary btn-sm">Add New Category</button>
-	                                </div>
-	                              </div>
-	                            </form>
-	        		        </div>
-	        		        <div class="col-md-8">
+			            <div class="row">
+	        		        <div class="col-md-12">
 	        		            <table class="table table-hover ">
 	                                <thead class="bg-light ">
 	                                  <tr>
@@ -107,7 +67,7 @@
 	                                           </label>
 	                                       </div>
 	                                    </td>  
-	                                    <td><a href="#"><small>Johnyahua</small></a></td>
+	                                    <td><a href="#"><small>admin</small></a></td>
 	                                    <td><small>Doe</small></td>
 	                                    <td><small>john@example.com</small></td>
 	                                    <td><a href="#"><small>5</small></a></td>
@@ -118,7 +78,7 @@
 	                                </tbody>
 	                              </table>
 	        		        </div>
-	        		    </div> -->
+	        		    </div>
 			        </div>
 			    </div>
 			</div>

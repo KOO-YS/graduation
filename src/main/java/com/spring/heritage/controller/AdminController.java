@@ -24,4 +24,9 @@ public class AdminController {
 		return "admin/notice";
 	}
 	
+	/*회원관리 페이지*/
+	@RequestMapping("/admin/user")
+	public String goToUser() {
+		return "admin/user";
+	}
 }

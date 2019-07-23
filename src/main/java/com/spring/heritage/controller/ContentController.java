@@ -29,27 +29,54 @@ public class ContentController {
 	public String tempMenu() {
 		return "contents/menu";
 	}
-
+	
+	/***
+	 * 
+	 *  content/guide
+	 *  
+	 ***/
+	
 	/* 관람안내 */
-	@RequestMapping("/roles")
+	@RequestMapping("/guide/roles")
 	public String goToRoles() {
 		return "contents/guide/roles";
 	}
-
-	/*
-	 * @RequestMapping("/contents/guide/roles") public String goToRoles() { return
-	 * "contents/guide/roles"; }
-	 */
+	/* 관람코스 */
+	@RequestMapping("/guide/course")
+	public String goToCourse() {
+		return "contents/guide/course";
+	}
+	/* 해설안내 */
+	@RequestMapping("/guide/explain")
+	public String goToExplain() {
+		return "contents/guide/explain";
+	}
+	/* 오시는길 */
+	@RequestMapping("/guide/location")
+	public String goToLocation() {
+		return "contents/guide/location";
+	}
+	/* 주변 둘러보기 */
+	@RequestMapping("/guide/near")
+	public String goToNear() {
+		return "contents/guide/near";
+	}
+	/* 편의시설 */
+	@RequestMapping("/guide/facility")
+	public String goToFacility() {
+		return "contents/guide/facility";
+	}
+	/***
+	 * 
+	 *  content/reservation
+	 *  
+	 ***/
 	/* 경회루 & 한국어 투어 */
 	@RequestMapping("/tour")
 	public String goToTours() {
 		return "contents/reservation/tour";
 	}
 
-	/***
-	 * @RequestMapping("/contents/reservation/tour") public String goToTours() {
-	 * return "contents/reservation/tour"; }
-	 */
 	/* 자료마당 */
 	@RequestMapping("/data")
 	public String goToData() {

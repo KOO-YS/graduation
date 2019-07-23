@@ -11,23 +11,23 @@
     
     
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,900" rel="stylesheet">
-    <link rel="stylesheet" href="fonts/icomoon/style.css">
+    <link rel="stylesheet" href="/static/fonts/icomoon/style.css">
 
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/jquery-ui.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/jquery-ui.css">
+    <link rel="stylesheet" href="/static/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/static/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="/static/css/owl.theme.default.min.css">
 
-    <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="/static/css/jquery.fancybox.min.css">
 
-    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="/static/css/bootstrap-datepicker.css">
 
-    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+    <link rel="stylesheet" href="/static/fonts/flaticon/font/flaticon.css">
 
-    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="/static/css/aos.css">
 
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/static/css/style.css">
     
   </head>
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
@@ -46,7 +46,7 @@
     
     <c:import url="/WEB-INF/views/structure/header.jsp"></c:import>
 
-    <div class="site-blocks-cover overlay" style="background-image: url(images/Gyeongbokgung.jpg);" data-aos="fade" id="home-section">
+    <div class="site-blocks-cover overlay" style="background-image: url(/static/images/Gyeongbokgung.jpg);" data-aos="fade" id="home-section">
       <div class="container">
         <div class="row align-items-center justify-content-center">
              <div class="col-md-6 mt-lg-5 text-center">
@@ -60,7 +60,7 @@
     <div class="site-section cta-big-image" id="about-section">
       <div class="container">
         
-        <img src="images/img_big_1.jpg" alt="Image" class="img-fluid">
+        <img src="/static/images/img_big_1.jpg" alt="Image" class="img-fluid">
         <div class="img-box">
           <span class="sub-title">경복궁</span>
           <h2>경복궁 야간 특별관람</h2>
@@ -85,7 +85,7 @@
               <div>
                 <h3>관람규칙규정</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae eligendi at.</p>
-                <p><a href="/roles">Learn More</a></p>
+                <p><a href="/guide/roles">Learn More</a></p>
               </div>
             </div>
           </div>
@@ -95,7 +95,7 @@
               <div>
                 <h3>관람코스</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae eligendi at.</p>
-                <p><a href="/roles">Learn More</a></p>
+                <p><a href="/guide/roles">Learn More</a></p>
               </div>
             </div>
           </div>
@@ -105,7 +105,7 @@
               <div>
                 <h3>해설안내</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae eligendi at.</p>
-                <p><a href="/roles">Learn More</a></p>
+                <p><a href="/guide/roles">Learn More</a></p>
               </div>
             </div>
           </div>
@@ -117,7 +117,7 @@
               <div>
                 <h3>오시는길</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae eligendi at.</p>
-                <p><a href="/roles">Learn More</a></p>
+                <p><a href="/guide/roles">Learn More</a></p>
               </div>
             </div>
           </div>
@@ -127,7 +127,7 @@
               <div>
                 <h3>편의시설 안내</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae eligendi at.</p>
-                <p><a href="/roles">Learn More</a></p>
+                <p><a href="/guide/roles">Learn More</a></p>
               </div>
             </div>
           </div>
@@ -137,7 +137,7 @@
               <div>
                 <h3>주변 둘러보기</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae eligendi at.</p>
-                <p><a href="/roles">Learn More</a></p>
+                <p><a href="/guide/roles">Learn More</a></p>
               </div>
             </div>
           </div>
@@ -156,10 +156,10 @@
             
 
             <div class="owl-carousel slide-one-item-alt">
-              <img src="images/slide_1.jpg" alt="Image" class="img-fluid">
-              <img src="images/slide_2.jpg" alt="Image" class="img-fluid">
-              <img src="images/slide_3.jpg" alt="Image" class="img-fluid">
-              <img src="images/slide_4.jpg" alt="Image" class="img-fluid">
+              <img src="/static/images/slide_1.jpg" alt="Image" class="img-fluid">
+              <img src="/static/images/slide_2.jpg" alt="Image" class="img-fluid">
+              <img src="/static/images/slide_3.jpg" alt="Image" class="img-fluid">
+              <img src="/static/images/slide_4.jpg" alt="Image" class="img-fluid">
             </div>
             <div class="custom-direction">
               <a href="#" class="custom-prev">Prev</a><a href="#" class="custom-next">Next</a>
@@ -212,7 +212,7 @@
         <div class="row">
           <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
             <div class="h-entry">
-              <a href="single.html"><img src="images/img_1.jpg" alt="Image" class="img-fluid"></a>
+              <a href="single.html"><img src="/static/images/img_1.jpg" alt="Image" class="img-fluid"></a>
               <h2 class="font-size-regular"><a href="single.html">경복궁의 역사</a></h2>
               <div class="meta mb-4">Ham Brook <span class="mx-2">&bullet;</span> Jan 18, 2019<span class="mx-2">&bullet;</span> <a href="single.html">News</a></div>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus eligendi nobis ea maiores sapiente veritatis reprehenderit suscipit quaerat rerum voluptatibus a eius.</p>
@@ -221,7 +221,7 @@
           </div>
           <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
             <div class="h-entry">
-              <a href="single.html"><img src="images/img_2.jpg" alt="Image" class="img-fluid"></a>
+              <a href="single.html"><img src="/static/images/img_2.jpg" alt="Image" class="img-fluid"></a>
               <h2 class="font-size-regular"><a href="single.html">이야기</a></h2>
               <div class="meta mb-4">James Phelps <span class="mx-2">&bullet;</span> Jan 18, 2019<span class="mx-2">&bullet;</span> <a href="single.html">News</a></div>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus eligendi nobis ea maiores sapiente veritatis reprehenderit suscipit quaerat rerum voluptatibus a eius.</p>
@@ -230,7 +230,7 @@
           </div>
           <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
             <div class="h-entry">
-              <a href="single.html"><img src="images/img_1.jpg" alt="Image" class="img-fluid"></a>
+              <a href="single.html"><img src="/static/images/img_1.jpg" alt="Image" class="img-fluid"></a>
               <h2 class="font-size-regular"><a href="single.html">가이드북</a></h2>
               <div class="meta mb-4">James Phelps <span class="mx-2">&bullet;</span> Jan 18, 2019<span class="mx-2">&bullet;</span> <a href="single.html">News</a></div>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus eligendi nobis ea maiores sapiente veritatis reprehenderit suscipit quaerat rerum voluptatibus a eius.</p>
@@ -246,22 +246,22 @@
 
   </div> <!-- .site-wrap -->
 
-  <script src="js/jquery-3.3.1.min.js"></script>
-  <script src="js/jquery-migrate-3.0.1.min.js"></script>
-  <script src="js/jquery-ui.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/owl.carousel.min.js"></script>
-  <script src="js/jquery.stellar.min.js"></script>
-  <script src="js/jquery.countdown.min.js"></script>
-  <script src="js/bootstrap-datepicker.min.js"></script>
-  <script src="js/jquery.easing.1.3.js"></script>
-  <script src="js/aos.js"></script>
-  <script src="js/jquery.fancybox.min.js"></script>
-  <script src="js/jquery.sticky.js"></script>
+  <script src="/static/js/jquery-3.3.1.min.js"></script>
+  <script src="/static/js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="/static/js/jquery-ui.js"></script>
+  <script src="/static/js/popper.min.js"></script>
+  <script src="/static/js/bootstrap.min.js"></script>
+  <script src="/static/js/owl.carousel.min.js"></script>
+  <script src="/static/js/jquery.stellar.min.js"></script>
+  <script src="/static/js/jquery.countdown.min.js"></script>
+  <script src="/static/js/bootstrap-datepicker.min.js"></script>
+  <script src="/static/js/jquery.easing.1.3.js"></script>
+  <script src="/static/js/aos.js"></script>
+  <script src="/static/js/jquery.fancybox.min.js"></script>
+  <script src="/static/js/jquery.sticky.js"></script>
 
   
-  <script src="js/main.js"></script>
+  <script src="/static/js/main.js"></script>
     
   </body>
 </html>

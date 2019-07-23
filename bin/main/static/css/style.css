@@ -1724,6 +1724,13 @@ h1, h2, h3, h4, h5,
 .blog-content blockquote {
 	padding: 30px;
 }
+.content-title {
+	font-weight: 600;
+    font-size: 17px;
+    padding-top: 20px;
+    color: indigo;
+}
+
 .comment-form-wrap {
   clear: both; }
 

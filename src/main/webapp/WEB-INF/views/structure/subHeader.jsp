@@ -14,7 +14,7 @@
 
               <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
                 <li><a href="#about-section" class="nav-link" style="color:#000 !important;">Notice</a></li>
-                <li><a href="/roles" class="nav-link" style="color:#000 !important;">관람안내</a></li>
+                <li><a href="/guide/roles" class="nav-link" style="color:#000 !important;">관람안내</a></li>
                 <li><a href="/tour" class="nav-link" style="color:#000 !important;">관람예약/신청</a></li>
                 <li><a href="/data" class="nav-link" style="color:#000 !important;">자료마당</a></li>
                 <li><a href="/about" class="nav-link" style="color:#000 !important;">경복궁 관리소</a></li>
