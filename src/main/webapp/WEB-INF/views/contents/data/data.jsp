@@ -54,37 +54,13 @@
         </div>
         <div class="row">
           <!-- 사이드바 -->
-          <div class="col-md-3 sidebar bg-light">
-            
-            <div class="sidebar-box bg-light">
-              <div class="categories">
-                <h3>Categories</h3>
-                <!-- <ul class="nav nav-tabs"></ul> -->
-                <li><a href='#cowork-1' data-toggle='tab'>경복궁의 역사</a></li>
-                <li><a href='#cowork-2' data-toggle='tab'>간행물</a></li>
-              </div>
-            </div>
-            <div class="sidebar-box">
-              <img src="/static/images/person_1.jpg" alt="Image placeholder" class="img-fluid mb-4">
-              <h3>About The Author</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus itaque, autem necessitatibus voluptate quod mollitia delectus aut, sunt placeat nam vero culpa sapiente consectetur similique, inventore eos fugit cupiditate numquam!</p>
-              <p><a href="#" class="btn btn-primary btn-sm">Read More</a></p>
-            </div>
-
-          </div>
+          <c:import url="/WEB-INF/views/contents/data/data_category.jsp"></c:import>
           <!-- 사이드바 끝 -->
         <!-- 포스트 -->		   
           <div class="col-md-9 blog-content">
-            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda nihil aspernatur nemo sunt, qui, harum repudiandae quisquam eaque dolore itaque quod tenetur quo quos labore?</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae expedita cumque necessitatibus ducimus debitis totam, quasi praesentium eveniet tempore possimus illo esse, facilis? Corrupti possimus quae ipsa pariatur cumque, accusantium tenetur voluptatibus incidunt reprehenderit, quidem repellat sapiente, id, earum obcaecati.</p>
-
-            <blockquote><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident vero tempora aliquam excepturi labore, ad soluta voluptate necessitatibus. Nulla error beatae, quam, facilis suscipit quaerat aperiam minima eveniet quis placeat.</p></blockquote>
-
             <div class="pt-5">
               <p>Categories:  <a href="#">Design</a>, <a href="#">Events</a>  Tags: <a href="#">#html</a>, <a href="#">#trends</a></p>
             </div>
-		
-            
           </div>
           <!-- 포스트 끝 -->
         </div>

@@ -38,23 +38,23 @@
       <div class="container">
         <div class="row">
           <div class="col-md-3 text-left">
-            <h2 class="section-title mb-3" style="padding-top:30px;">경복궁 관리소</h2>
+            <h2 class="section-title mb-3" style="padding-top:30px;">자료마당</h2>
           </div>
             <div class="col-md-9">
 	          <p class="section-sub-title" style="padding-top:60px;">
-	          	인사말
-		       	<b style="font-weight:600; float:right;">메인 > 경복궁관리소 > 인사말</b>	
+	          	경복궁의 역사
+		       	<b style="font-weight:600; float:right;">메인 > 자료마당 > 경복궁의 역사</b>	
 	          </p>
             </div>
         </div>
         <div class="row">
 		  <!-- 사이드바 col-md-3 -->
-          <c:import url="/WEB-INF/views/contents/about/about_category.jsp"></c:import>
+          <c:import url="/WEB-INF/views/contents/data/data_category.jsp"></c:import>
           <!-- 사이드바 끝 -->
           <!-- 포스트 -->
           <div class="col-md-9 blog-content">
-            <blockquote class="bg-light" style="text-align:center;">
-            	<img alt="course" src="/static/images/greeting.gif">
+            <blockquote class="bg-light">
+            	내용
             </blockquote>
           </div>
           <!-- 포스트 끝 -->

@@ -42,8 +42,8 @@
           </div>
             <div class="col-md-9">
 	          <p class="section-sub-title" style="padding-top:60px;">
-	          	인사말
-		       	<b style="font-weight:600; float:right;">메인 > 경복궁관리소 > 인사말</b>	
+	          	공지사항
+		       	<b style="font-weight:600; float:right;">메인 > 경복궁관리소 > 공지사항</b>	
 	          </p>
             </div>
         </div>
@@ -53,8 +53,29 @@
           <!-- 사이드바 끝 -->
           <!-- 포스트 -->
           <div class="col-md-9 blog-content">
-            <blockquote class="bg-light" style="text-align:center;">
-            	<img alt="course" src="/static/images/greeting.gif">
+            <blockquote class="bg-light">
+            	<table class="table table-hover table-sm" style="text-align:center">
+				  <thead>
+				    <tr>
+				      <th scope="col">번호</th>
+				      <th scope="col">제목</th>
+				      <th scope="col">작성자</th>
+				      <th scope="col">등록일</th>
+				      <th scope="col">첨부</th>
+				      <th scope="col">조회수</th>
+				    </tr>
+				  </thead>
+				  <tbody>
+				    <tr>
+				      <th scope="row">1</th>
+				      <td>Mark</td>
+				      <td>Otto</td>
+				      <td>@mdo</td>
+				      <td>없</td>
+				      <td>12</td>
+				    </tr>
+				  </tbody>
+				</table>
             </blockquote>
           </div>
           <!-- 포스트 끝 -->

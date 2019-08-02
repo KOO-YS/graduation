@@ -55,7 +55,6 @@
           <div class="col-md-9 blog-content">
             <blockquote class="bg-light">
             	<div id="map" style="width:100%;height:350px;"></div>
-            	
             </blockquote>
           </div>
           <!-- 포스트 끝 -->

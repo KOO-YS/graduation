@@ -76,23 +76,52 @@ public class ContentController {
 	public String goToTours() {
 		return "contents/reservation/tour";
 	}
+	/* 한국어 투어 */
+	@RequestMapping("/reservation/korean")
+	public String goToKorean() {
+		return "contents/reservation/korean";
+	}
+	/* 경회루 투어 */
+	@RequestMapping("/reservation/special")
+	public String goToSpecial() {
+		return "contents/reservation/special";
+	}
+	/***
+	 * 
+	 *  content/data
+	 *  
+	 ***/
 
 	/* 자료마당 */
 	@RequestMapping("/data")
 	public String goToData() {
 		return "contents/data/data";
 	}
+	/* 경복궁의 역사 */
+	@RequestMapping("/data/history")
+	public String goToHistory() {
+		return "contents/data/history";
+	}
+	/* 간행물 */
+	@RequestMapping("/data/brochure")
+	public String goToBrochure() {
+		return "contents/data/brochure";
+	}
 
-	/* 경복궁 관리소 */
-	@RequestMapping("/about")
+	/***
+	 * 
+	 *  content/about
+	 *  
+	 ***/
+	/* 인사말 */
+	@RequestMapping("/about/about")
 	public String goToAbout() {
 		return "contents/about/about";
 	}
+	/* 공지사항 */
+	@RequestMapping("/about/notice")
+	public String goToNotice() {
+		return "contents/about/notice";
+	}
 
-	/*
-	 * 관리자 페이지
-	 * 
-	 * @RequestMapping("/admin/index") public String adminPage() { return
-	 * "admin/index"; }
-	 */
 }
