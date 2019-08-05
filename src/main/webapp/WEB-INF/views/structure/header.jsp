@@ -17,7 +17,7 @@
                 <li><a href="#info-section" class="nav-link">관람안내</a></li>
                 <li><a href="#reservation-section" class="nav-link">관람예약/신청</a></li>
                 <li><a href="#data-section" class="nav-link">자료마당</a></li>
-                <li><a href="/about" class="nav-link">경복궁 관리소</a></li>
+                <li><a href="/about/about" class="nav-link">경복궁 관리소</a></li>
               </ul>
             </nav>
           </div>

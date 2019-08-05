@@ -8,18 +8,14 @@
    	<meta charset="utf-8">
    	<meta http-equiv="X-UA-Compatible" content="IE=edge">
    	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="icon" href="/static/images/favicon.ico" type="image/ico" />
+	<!-- <link rel="icon" href="images/favicon.ico" type="image/ico" /> -->
 
    	<title>test</title>
-
-   	<!-- Bootstrap -->
+   	
    	<link rel="stylesheet" href="/static/css/bootstrap.min.css">
    	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-   	<script src="/static/js/bootstrap.min.js"></script>
-<!-- <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script> -->
-<!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> -->
-<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
-<!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="#" crossorigin="anonymous"> -->
+	<script src="/static/js/bootstrap.min.js"></script>
+
 </head>
 
 <body class="bg-light">
@@ -33,10 +29,10 @@
 			        <div class="card-body">
 			            <div class="row">
 			                <div class="col-md-2 border-right">
-			                    <h4>User Info</h4>
+			                    <h4>Notice</h4>
 			                </div>
 			                <div class="col-md-6">
-			                    <button type="button" class="btn btn-sm btn-primary">sample button</button>
+			                    <button type="button" class="btn btn-sm btn-primary" onclick="location.href='/admin/notice/insert'">공지사항 추가</button>
 			                </div>
 			                
 			            </div>
@@ -53,10 +49,10 @@
 	                                           </label>
 	                                       </div>
 	                                    </th>  
-	                                    <th>Name</th>
-	                                    <th>Description</th>
-	                                    <th>Slug</th>
-	                                    <th>Count</th>
+	                                    <th>글 제목</th>
+	                                    <th>내용</th>
+	                                    <th>이미지</th>
+	                                    <th></th>
 	                                  </tr>
 	                                </thead>
 	                                <tbody>
@@ -71,7 +67,7 @@
 	                                    <td><a href="#"><small>admin</small></a></td>
 	                                    <td><small>Doe</small></td>
 	                                    <td><small>john@example.com</small></td>
-	                                    <td><a href="#"><small>5</small></a></td>
+	                                    <td><button type="button" class="btn btn-sm btn-primary">수정하기</button></td>
 	                                  </tr>
 	                              
 	                                 
@@ -80,12 +76,12 @@
 	                              </table>
 	        		        </div>
 	        		    </div>
+			            
 			        </div>
 			    </div>
 			</div>
 		</div>
 	</div>
 
-	
-  </body>
+</body>
 </html>
