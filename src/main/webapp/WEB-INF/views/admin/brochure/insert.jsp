@@ -82,7 +82,7 @@ $(document).ready(function() {
    	    var formData = new FormData(form);
    	    console.log("form은 :::"+form+"\nformData는 :::"+formData);
 
-       $.ajax({
+       /* $.ajax({
               url: '/admin/insertNotice',
               type: 'POST',
               enctype: "multipart/form-data",
@@ -96,7 +96,7 @@ $(document).ready(function() {
               error: function (request, status, error) {
                     console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
               }
-        });
+        }); */
     });
 });
 	    

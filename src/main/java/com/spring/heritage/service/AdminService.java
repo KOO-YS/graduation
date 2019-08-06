@@ -1,5 +1,7 @@
 package com.spring.heritage.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -30,5 +32,9 @@ public class AdminService {
 			msg = "공지사항 이미지 추가 성공";
 		}
 		return msg;
+	}
+
+	public List<NoticeVO> noticeList() {
+		return adminDao.noticeList();
 	}
 }

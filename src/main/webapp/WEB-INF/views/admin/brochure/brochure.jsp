@@ -32,7 +32,7 @@
 			                    <h4>Brochure</h4>
 			                </div>
 			                <div class="col-md-6">
-			                    <button type="button" class="btn btn-sm btn-primary">추가</button>
+			                    <button type="button" class="btn btn-sm btn-primary" onclick="location.href='/admin/brochure/insert'">추가</button>
 			                </div>
 			                
 			            </div>

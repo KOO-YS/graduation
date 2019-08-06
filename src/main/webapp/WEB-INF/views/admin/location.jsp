@@ -45,11 +45,19 @@
 	        		        </div>
 	        		    </div>
 						<div class="row">
+							<div class="col-md-6">
+	        		        	<input type="text" class="form-control" id="address" value="" placeholder="서울특별시 종로구 사직로 161 경복궁">
+	        		        </div>
+	        		        <div class="col-md-6">
+	        		        	<button type="button" class="btn btn-outline-primary" value="좌표값 검색" onclick="checkAddr()">검색</button>
+	        		        </div>
+	        		    </div>
+	        		    <div class="row">    
 	        		        <div class="col-md-6">
        		            		<label>x 좌표:</label>
-          						<input type="text" class="form-control" id="company" name="company">
+          						<input type="text" class="form-control" id="xValue" name="xValue">
           						<label>y 좌표:</label>
-          						<input type="text" class="form-control" id="company" name="company">
+          						<input type="text" class="form-control" id="yValue" name="yValue">
        		            	</div>
        		            	<div class="col-md-6">
        		            		<button type="button" class="btn btn-sm btn-primary" style="margin-top:100px;">sample button</button>
@@ -61,17 +69,76 @@
 		</div>
 	</div>
 
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=117569877c4f0f88d82995089cb983ae"></script> <!-- 임시키 -->
+<script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=117569877c4f0f88d82995089cb983ae&libraries=services"></script> <!-- 임시키 -->
 <script>
-var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
-mapOption = { 
-    center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
-    level: 3 // 지도의 확대 레벨
-};
+var address      = document.getElementById("address");
+var mapContainer = document.getElementById("map");
+var coordXY   = document.getElementById("coordXY");
+var mapOption;
+var map;
+var x,y = "";
 
-//지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
-var map = new kakao.maps.Map(mapContainer, mapOption); 
+if (address.value=="") {
+
+ mapOption = {
+  center: new daum.maps.LatLng(33.450701, 126.570667), // 임의의 지도 중심좌표 , 제주도 다음본사로 잡아봤다.
+  /* center: new daum.maps.LatLng($("#nowX").val(),$("#nowY").val()), // 기존 디비에 저장된 좌표 */
+        level: 4            // 지도의 확대 레벨
+ };
+}
+
+// 지도 생성
+map = new daum.maps.Map(mapContainer, mapOption);
+
+
+function checkAddr() {
+ var gap = address.value; // 주소검색어
+ if (gap=="") {
+  alert("도로명 주소를 입력하세요.");
+  address.focus();
+  return;
+ }
+ 
+ // 주소-좌표 변환 객체를 생성
+ var geocoder = new daum.maps.services.Geocoder();
+
+
+
+ // 주소로 좌표를 검색
+ geocoder.addressSearch(gap, function(result, status) {
+  
+  // 정상적으로 검색이 완료됐으면,
+  if (status == daum.maps.services.Status.OK) {
+   
+   var coords = new daum.maps.LatLng(result[0].y, result[0].x);
+
+   y = result[0].x;
+   x = result[0].y;
+
+
+
+   // 결과값으로 받은 위치를 마커로 표시합니다.
+   var marker = new daum.maps.Marker({
+    map: map,
+    position: coords
+   });
+
+
+
+   // 인포윈도우로 장소에 대한 설명표시
+   var infowindow = new daum.maps.InfoWindow({
+    content: '<div style="width:150px;text-align:center;padding:5px 0;">경복궁</div>'
+   });
+
+   infowindow.open(map,marker);
+   
+   // 지도 중심을 이동
+   map.setCenter(coords);
+
+   coordXY.innerHTML = "<br>X좌표 : " + x + "<br><br>Y좌표 : " + y;
+  }
+ });
+}
 </script>
-	
   </body>
 </html>

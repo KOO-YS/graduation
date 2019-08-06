@@ -2,6 +2,7 @@ package com.spring.heritage.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -32,7 +33,8 @@ public class AdminController {
 
 	/* 공지사항 페이지 */
 	@RequestMapping("/admin/notice")
-	public String goToNotice() {
+	public String goToNotice(Model model) {
+		model.addAttribute("noticeList", adminService.noticeList());
 		return "admin/notice/notice";
 	}
 	/* 공지사항 추가 폼*/
@@ -86,6 +88,11 @@ public class AdminController {
 	/* 간행물 업로드 -> 다운 */
 	@RequestMapping("/admin/brochure")
 	public String goToBrochure() {
-		return "admin/brochure";
+		return "admin/brochure/brochure";
+	}
+	/* 간행물 업로드 폼 */
+	@RequestMapping("/admin/brochure/insert")
+	public String goToInsertBrochure() {
+		return "admin/brochure/insert";
 	}
 }

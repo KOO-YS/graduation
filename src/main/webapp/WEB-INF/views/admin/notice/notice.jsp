@@ -49,13 +49,15 @@
 	                                           </label>
 	                                       </div>
 	                                    </th>  
+	                                    <th>글 번호</th>
 	                                    <th>글 제목</th>
+	                                    <th>작성자</th>
 	                                    <th>내용</th>
-	                                    <th>이미지</th>
 	                                    <th></th>
 	                                  </tr>
 	                                </thead>
 	                                <tbody>
+	                                <c:forEach var="no" items="${noticeList}">
 	                                  <tr>
 	                                    <td>
 	                                        <div class="form-check-inline">
@@ -64,11 +66,13 @@
 	                                           </label>
 	                                       </div>
 	                                    </td>  
-	                                    <td><a href="#"><small>admin</small></a></td>
-	                                    <td><small>Doe</small></td>
-	                                    <td><small>john@example.com</small></td>
+	                                    <td>${no.pk}</td>
+	                                    <td>${no.title}</td>
+	                                    <td>${no.writer}</td>
+	                                    <td>${no.content}</td>
 	                                    <td><button type="button" class="btn btn-sm btn-primary">수정하기</button></td>
 	                                  </tr>
+	                                </c:forEach>
 	                              
 	                                 
 	                                 

@@ -14,4 +14,10 @@
 		INSERT INTO notice_img (pk, noticePk, oriName, saveName, imgPath)
 		VALUES (#{pk}, #{noticePk}, #{oriName}, #{saveName}, #{imgPath})
 	</insert>
+	
+	<select id="noticeList" resultType="com.spring.heritage.vo.NoticeVO">
+		SELECT
+			*
+			FROM notice
+	</select>
 </mapper>
