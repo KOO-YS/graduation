@@ -15,9 +15,6 @@
    	<link rel="stylesheet" href="/static/css/bootstrap.min.css">
    	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
    	<script src="/static/js/bootstrap.min.js"></script>
-<!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> -->
-<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
-<!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="#" crossorigin="anonymous"> -->
 </head>
 
 <body class="bg-light">
@@ -44,6 +41,7 @@
 	        		            <div id="map" style="width:100%;height:350px; margin: 50px 0;"></div>
 	        		        </div>
 	        		    </div>
+						<form id="coordForm">
 						<div class="row">
 							<div class="col-md-6">
 	        		        	<input type="text" class="form-control" id="address" value="" placeholder="서울특별시 종로구 사직로 161 경복궁">
@@ -59,10 +57,12 @@
           						<label>y 좌표:</label>
           						<input type="text" class="form-control" id="yValue" name="yValue">
        		            	</div>
-       		            	<div class="col-md-6">
-       		            		<button type="button" class="btn btn-sm btn-primary" style="margin-top:100px;">sample button</button>
+       		            	<div class="col-md-6" style="margin-top:100px;">
+       		            		<button type="reset" class="btn btn-sm btn-primary" name="resetBtn">리셋</button>
+       		            		<button type="button" class="btn btn-sm btn-primary" name="coordBtn">좌표 저장</button>
        		            	</div>
        		            </div>
+       		            </form>
 			        </div>
 			    </div>
 			</div>
@@ -73,7 +73,6 @@
 <script>
 var address      = document.getElementById("address");
 var mapContainer = document.getElementById("map");
-var coordXY   = document.getElementById("coordXY");
 var mapOption;
 var map;
 var x,y = "";
@@ -110,35 +109,57 @@ function checkAddr() {
   // 정상적으로 검색이 완료됐으면,
   if (status == daum.maps.services.Status.OK) {
    
-   var coords = new daum.maps.LatLng(result[0].y, result[0].x);
+   	var coords = new daum.maps.LatLng(result[0].y, result[0].x);
 
-   y = result[0].x;
-   x = result[0].y;
-
-
-
-   // 결과값으로 받은 위치를 마커로 표시합니다.
-   var marker = new daum.maps.Marker({
-    map: map,
-    position: coords
-   });
+   	y = result[0].x;
+   	x = result[0].y;
+   	
+   	// x, y 좌표 출력
+   	$("#xValue").val(x);
+	$("#yValue").val(y);
 
 
+   	// 결과값으로 받은 위치를 마커로 표시합니다.
+   	var marker = new daum.maps.Marker({
+    	map: map,
+    	position: coords
+   	});
 
-   // 인포윈도우로 장소에 대한 설명표시
-   var infowindow = new daum.maps.InfoWindow({
-    content: '<div style="width:150px;text-align:center;padding:5px 0;">경복궁</div>'
-   });
 
-   infowindow.open(map,marker);
+
+   	// 인포윈도우로 장소에 대한 설명표시
+   	var infowindow = new daum.maps.InfoWindow({
+    	content: '<div style="width:150px;text-align:center;padding:5px 0;">경복궁</div>'
+   	});
+
+   	infowindow.open(map,marker);
    
-   // 지도 중심을 이동
-   map.setCenter(coords);
-
-   coordXY.innerHTML = "<br>X좌표 : " + x + "<br><br>Y좌표 : " + y;
+   	// 지도 중심을 이동
+   	map.setCenter(coords);
+	
   }
  });
 }
+/* 좌표 값 설정 */
+$("button[name='coordBtn']").click(function() {
+	alert($("#xValue").val());
+	alert($("#yValue").val());	
+	var formData = $("#coordForm").serialize();
+	
+	$.ajax({
+        url: '/admin/updateMap',
+        type: 'POST',
+        data: formData,
+        success: function(data, textStatus, jqXHR) {
+            alert("좌표값이 설정되었습니다.");
+            location.href='/admin/location';
+        },
+        error: function (request, status, error) {
+               console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+        }
+  });
+	
+});
 </script>
   </body>
 </html>

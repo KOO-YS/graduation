@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
+import com.spring.heritage.vo.CoordVO;
 import com.spring.heritage.vo.NoticeImgVO;
 import com.spring.heritage.vo.NoticeVO;
 
@@ -15,5 +16,7 @@ public interface AdminDao {
 	int insertNoticeImg(NoticeImgVO imgVo);
 
 	List<NoticeVO> noticeList();
+
+	int updateMap(CoordVO coordVo);
 
 }

@@ -40,31 +40,38 @@
 			            <div class="row">
 			            	<div class="col-md-9">
 				            	<div class="col-md-12 bg-light card-body">
-		        		            <h4>공지사항 추가</h4>
-		        		            <form id="noticeForm">
-		                              <div class="form-group row">
-		                                <label for="title" class="col-12 col-form-label">글 제목</label> 
-		                                <div class="col-12">
-		                                  <input id="title" name="title" class="form-control here" type="text">
+		        		            <h4>가이드북 추가</h4>
+		        		            <form id="brochureForm">
+		        		            <div class="row">
+		                                <div class="col-md-6">
+		                                	<label for="language" class="col-12 col-form-label">언어</label> 
+			                                <div class="col-12">
+			                                  <input id="language" name="language" class="form-control here" type="text">
+			                                </div>
+			                                <label for="title" class="col-12 col-form-label">언어*</label> 
+			                                <div class="col-12">
+			                                  <select class="form-control">
+			                                  	<option>한국어</option>
+			                                  	<option>영어</option>
+			                                  	<option>중국어</option>
+			                                  	<option>일본어</option>
+			                                  	<!-- 국가 코드 -->
+			                                  	<!-- http://www.iegate.net/country_code.php -->
+			                                  </select>
+			                                </div>
 		                                </div>
-		                              </div>
-		                              <div class="form-group row">
-		                                <label for="content" class="col-12 col-form-label">내용</label> 
-		                                <div class="col-12">
-		                                  <textarea id="description" name="content" cols="40" rows="4" class="form-control"></textarea>
+		                                <div class="col-md-6">
+		                                	<label for="file" class="col-12 col-form-label">가이드북 - pdf</label> 
+			                                <div class="col-12">
+			                                  <input id="file" name="file" class="form-control here" type="file">
+			                                </div>
 		                                </div>
-		                              </div> 
-		                              <div class="form-group row">
-		                                <label for="image" class="col-12 col-form-label">이미지</label> 
-		                                <div class="col-12">
-		                                  <input id="image" name="image" class="form-control here" type="file">
-		                                </div>
-		                              </div>
-		                              <div class="form-group row">
-		                                <div class="col-12">
+		        		            </div>
+		        		            <div class="row" style="margin-top:20px;">
+		                                <div class="col-md-12">
 		                                  <button name="submitBtn" type="button" class="btn btn-primary btn-sm">추가</button>
 		                                </div>
-		                              </div>
+		                            </div>
 		                            </form>
 		        		        </div>
 			            	</div>
@@ -103,3 +110,4 @@ $(document).ready(function() {
 </script>
 </body>
 </html>
+

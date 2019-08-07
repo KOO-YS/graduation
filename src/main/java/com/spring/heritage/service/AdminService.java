@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.spring.heritage.dao.AdminDao;
+import com.spring.heritage.vo.CoordVO;
 import com.spring.heritage.vo.NoticeImgVO;
 import com.spring.heritage.vo.NoticeVO;
 
@@ -36,5 +37,15 @@ public class AdminService {
 
 	public List<NoticeVO> noticeList() {
 		return adminDao.noticeList();
+	}
+
+	public String updateMap(CoordVO coordVo) {
+		int success = 0;
+		String msg ="좌표값 변경 실패";
+		success = adminDao.updateMap(coordVo);
+		if(success>0) {
+			msg = "좌표값 변경";
+		}
+		return msg;
 	}
 }

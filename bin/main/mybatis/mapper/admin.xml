@@ -20,4 +20,9 @@
 			*
 			FROM notice
 	</select>
+	<!-- update 처리만 가능하도록! -->
+	<insert id="updateMap" parameterType="com.spring.heritage.vo.CoordVO">
+		INSERT INTO coord (coordX, coordY)
+		VALUES (#{coordX}, #{coordY})
+	</insert>
 </mapper>

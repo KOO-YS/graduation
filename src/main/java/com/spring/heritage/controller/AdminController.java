@@ -1,5 +1,9 @@
 package com.spring.heritage.controller;
 
+import java.math.BigDecimal;
+
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,6 +15,7 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.spring.heritage.service.AdminService;
 import com.spring.heritage.util.UploadFileUtil;
+import com.spring.heritage.vo.CoordVO;
 import com.spring.heritage.vo.NoticeImgVO;
 import com.spring.heritage.vo.NoticeVO;
 
@@ -72,6 +77,23 @@ public class AdminController {
 	/* 위치 정보 페이지 */
 	@RequestMapping("/admin/location")
 	public String goTOLocation() {
+		return "admin/location";
+	}
+	@RequestMapping(value="/admin/updateMap", method = RequestMethod.POST)
+	public String updateMap(HttpServletRequest request) {
+		String xValue = request.getParameter("xValue");
+		String yValue = request.getParameter("yValue");
+		
+		BigDecimal coordX = new BigDecimal(xValue);
+		BigDecimal coordY = new BigDecimal(yValue);
+		System.out.println("decimal X :::"+coordX+"\ndecimal Y :::"+coordY);
+		
+		CoordVO coordVo = new CoordVO();
+		coordVo.setCoordX(coordX);
+		coordVo.setCoordY(coordY);
+		
+		String msg = adminService.updateMap(coordVo);
+		System.out.println(msg);
 		return "admin/location";
 	}
 	

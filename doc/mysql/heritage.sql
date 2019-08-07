@@ -28,6 +28,16 @@ CREATE TABLE notice_img (
 -- 지도 좌표
 DROP TABLE IF EXISTS coord;
 CREATE TABLE coord (
-    `coordX` DECIMAL(10, 8),
-    `coordY` DECIMAL(11, 8)
+    coordX DECIMAL(10, 8),
+    coordY DECIMAL(11, 8)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- 가이드북 첨부
+DROP TABLE IF EXISTS guidebook;
+CREATE TABLE guidebook (
+	lang VARCHAR(100) NOT NULL,
+    oriName VARCHAR(300) DEFAULT NULL,
+	saveName VARCHAR(300) DEFAULT NULL,
+    filePath VARCHAR(500) DEFAULT NULL,
+    updateTime TIMESTAMP DEFAULT NOW()
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
