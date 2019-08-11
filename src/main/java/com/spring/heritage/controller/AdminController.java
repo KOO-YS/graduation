@@ -16,6 +16,7 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 import com.spring.heritage.service.AdminService;
 import com.spring.heritage.util.UploadFileUtil;
 import com.spring.heritage.vo.CoordVO;
+import com.spring.heritage.vo.GuidebookVO;
 import com.spring.heritage.vo.NoticeImgVO;
 import com.spring.heritage.vo.NoticeVO;
 
@@ -28,7 +29,8 @@ public class AdminController {
 	
 	/* 로컬 저장소 위치 */
 	public static final String LOCAL_PATH = "C:/Users/구연수/Desktop/졸프/heratige/heratige/src/main";
-	public static final String NOTICE_IMG_PATH = "/resources/static/upload/";
+	public static final String NOTICE_IMG_PATH = "/resources/static/upload/notice/";
+	public static final String BROCHURE_PATH = "/resources/static/upload/brochure/";
 	
 	/* 관리자 페이지 */
 	@RequestMapping("/admin/index")
@@ -63,7 +65,7 @@ public class AdminController {
 		String msg = adminService.insertNotice(noticeVo);
 		System.out.println(msg);
 		
-		String saveName = UploadFileUtil.saveImageFile(LOCAL_PATH+NOTICE_IMG_PATH, image);
+		String saveName = UploadFileUtil.saveFile(LOCAL_PATH+NOTICE_IMG_PATH, image);
 		NoticeImgVO imgVo = new NoticeImgVO();
 		imgVo.setNoticePk(noticeVo.getPk());	// 저장된 공지글의 pk값 * selectKey 사용
 		imgVo.setOriName(oriName);
@@ -76,7 +78,8 @@ public class AdminController {
 	}
 	/* 위치 정보 페이지 */
 	@RequestMapping("/admin/location")
-	public String goTOLocation() {
+	public String goTOLocation(Model model) {
+		model.addAttribute("getCoord", adminService.getCoord());
 		return "admin/location";
 	}
 	@RequestMapping(value="/admin/updateMap", method = RequestMethod.POST)
@@ -109,12 +112,34 @@ public class AdminController {
 	}
 	/* 간행물 업로드 -> 다운 */
 	@RequestMapping("/admin/brochure")
-	public String goToBrochure() {
+	public String goToBrochure(Model model) {
+		model.addAttribute("brochure", adminService.getBrochure());
 		return "admin/brochure/brochure";
 	}
 	/* 간행물 업로드 폼 */
 	@RequestMapping("/admin/brochure/insert")
 	public String goToInsertBrochure() {
 		return "admin/brochure/insert";
+	}
+	/* 간행물 업로드 */
+	@RequestMapping(value="/admin/insertBrochure", method = RequestMethod.POST)
+	@ResponseBody
+	public String insertBrochure(MultipartHttpServletRequest request) throws Exception{
+		MultipartFile file = request.getFile("file");
+		String title = request.getParameter("title");
+		String language = request.getParameter("language");
+		String oriName = file.getOriginalFilename();
+		String saveName = UploadFileUtil.saveFile(LOCAL_PATH+BROCHURE_PATH, file);
+		
+		GuidebookVO guideVo = new GuidebookVO();
+		
+		guideVo.setTitle(title);
+		guideVo.setLang(language);
+		guideVo.setOriName(oriName);
+		guideVo.setSaveName(saveName);
+		guideVo.setFilePath(LOCAL_PATH+BROCHURE_PATH);
+		
+		String msg = adminService.insertBrochure(guideVo);
+		return "admin/brochure";
 	}
 }

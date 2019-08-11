@@ -16,13 +16,23 @@
 	</insert>
 	
 	<select id="noticeList" resultType="com.spring.heritage.vo.NoticeVO">
-		SELECT
-			*
+		SELECT *
 			FROM notice
 	</select>
-	<!-- update 처리만 가능하도록! -->
-	<insert id="updateMap" parameterType="com.spring.heritage.vo.CoordVO">
-		INSERT INTO coord (coordX, coordY)
-		VALUES (#{coordX}, #{coordY})
+	<update id="updateMap" parameterType="com.spring.heritage.vo.CoordVO">
+		UPDATE coord
+		SET coordX = #{coordX}, coordY = #{coordY}
+	</update>
+	<select id="getCoord" resultType="com.spring.heritage.vo.CoordVO">
+		SELECT *
+			FROM coord
+	</select>
+	<insert id="insertBrochure" parameterType="com.spring.heritage.vo.GuidebookVO">
+		INSERT INTO guidebook (pk, title, lang, oriName, saveName, filePath, updateTime)
+		VALUES (#{pk}, #{title}, #{lang}, #{oriName}, #{saveName}, #{filePath}, now())
 	</insert>
+	<select id="getBrochure" resultType="com.spring.heritage.vo.GuidebookVO">
+		SELECT *
+			FROM guidebook
+	</select>
 </mapper>

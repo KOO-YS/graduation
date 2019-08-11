@@ -14,7 +14,7 @@ import org.springframework.web.multipart.MultipartFile;
  * @return 렌덤으로 생성 된 파일 명
  */
 public class UploadFileUtil {
-	public static String saveImageFile(String uploadImgPath, MultipartFile file) throws IllegalStateException, IOException {
+	public static String saveFile(String uploadPath, MultipartFile file) throws IllegalStateException, IOException {
 		String oriName = file.getOriginalFilename(); //원래 파일명
 		String ext = FilenameUtils.getExtension(oriName).toLowerCase(); //파일 확장자
 
@@ -23,7 +23,7 @@ public class UploadFileUtil {
 		
 		//파일명 랜덤처리
 		saveName = RandomStringUtils.randomAlphanumeric(32) + "." + ext;
-		saveImg = new File(uploadImgPath + saveName);
+		saveImg = new File(uploadPath + saveName);
 		
 		//이미지 이동
 		saveImg.getParentFile().mkdirs();

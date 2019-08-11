@@ -35,6 +35,9 @@
 			                </div>
 			                
 			            </div>
+			            <!-- DB에 저장된 좌표값 -->
+			            <input type="hidden" id="nowX" value="${getCoord.coordX}">
+          				<input type="hidden" id="nowY" value="${getCoord.coordY}">
 			            <hr>
 			            <div class="row">
 	        		        <div class="col-md-12">
@@ -80,9 +83,8 @@ var x,y = "";
 if (address.value=="") {
 
  mapOption = {
-  center: new daum.maps.LatLng(33.450701, 126.570667), // 임의의 지도 중심좌표 , 제주도 다음본사로 잡아봤다.
-  /* center: new daum.maps.LatLng($("#nowX").val(),$("#nowY").val()), // 기존 디비에 저장된 좌표 */
-        level: 4            // 지도의 확대 레벨
+  center: new daum.maps.LatLng($("#nowX").val(),$("#nowY").val()), // 기존 디비에 저장된 좌표
+  level: 4            // 지도의 확대 레벨
  };
 }
 
@@ -142,8 +144,6 @@ function checkAddr() {
 }
 /* 좌표 값 설정 */
 $("button[name='coordBtn']").click(function() {
-	alert($("#xValue").val());
-	alert($("#yValue").val());	
 	var formData = $("#coordForm").serialize();
 	
 	$.ajax({

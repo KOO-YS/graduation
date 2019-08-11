@@ -32,7 +32,7 @@
 			                    <h4>Brochure</h4>
 			                </div>
 			                <div class="col-md-6">
-			                    <button type="button" class="btn btn-sm btn-primary" onclick="location.href='/admin/brochure/insert'">추가</button>
+			                    <button type="button" class="btn btn-sm btn-primary" onclick="location.href='/admin/brochure/insert'">간행물 추가</button>
 			                </div>
 			                
 			            </div>
@@ -49,14 +49,16 @@
 	                                           </label>
 	                                       </div>
 	                                    </th>  
+	                                    <th>no.</th>
+	                                    <th>제목</th>
 	                                    <th>언어</th>
 	                                    <th>변경날짜</th>
-	                                    <th>이미지</th>
 	                                    <th>간행물 첨부파일</th>
 	                                    <th></th>
 	                                  </tr>
 	                                </thead>
 	                                <tbody>
+	                                <c:forEach var="bro" items="${brochure}">
 	                                  <tr>
 	                                    <td>
 	                                        <div class="form-check-inline">
@@ -65,15 +67,13 @@
 	                                           </label>
 	                                       </div>
 	                                    </td>  
-	                                    <td><a href="#"><small>admin</small></a></td>
-	                                    <td><small>Doe</small></td>
-	                                    <td><small>john@example.com</small></td>
-	                                    <td><a href="#"><small>5</small></a></td>
+	                                    <td>${bro.pk}</td>
+	                                    <td>${bro.title}</td>
+	                                    <td>${bro.lang}</td>
+	                                    <td>${bro.updateTime}</td>
 	                                    <td><button type="button" class="btn btn-sm btn-primary">수정하기</button></td>
 	                                  </tr>
-	                              
-	                                 
-	                                 
+	                                </c:forEach>
 	                                </tbody>
 	                              </table>
 	        		        </div>

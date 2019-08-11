@@ -43,21 +43,30 @@
 		        		            <h4>가이드북 추가</h4>
 		        		            <form id="brochureForm">
 		        		            <div class="row">
+		                                <div class="col-md-12">
+		                                  <label for="title" class="col-12 col-form-label">제목</label>
+		                                	<div class="col-md-12">  
+		                                  		<input type="text" class="form-control" id="title" name="title">
+		                                  	</div>
+		                                </div>
+		                            </div>
+		        		            <div class="row">
 		                                <div class="col-md-6">
 		                                	<label for="language" class="col-12 col-form-label">언어</label> 
 			                                <div class="col-12">
-			                                  <input id="language" name="language" class="form-control here" type="text">
-			                                </div>
-			                                <label for="title" class="col-12 col-form-label">언어*</label> 
-			                                <div class="col-12">
-			                                  <select class="form-control">
-			                                  	<option>한국어</option>
-			                                  	<option>영어</option>
-			                                  	<option>중국어</option>
-			                                  	<option>일본어</option>
 			                                  	<!-- 국가 코드 -->
 			                                  	<!-- http://www.iegate.net/country_code.php -->
+			                                  	<!-- 참조 -->
+			                                  	<!-- https://hiworldbye.tistory.com/43 -->
+			                                  	<!-- 이렇게 하고, DB에 selbox의 value 값을 넣어줄 때는, java단에서 selbox와 selboxDirect의 값을 체크하여 올바른 값을 넣고 DB 처리 해주면됨. -->
+			                                  <select class="form-control" id="language" name="language">
+			                                  	<option value="korean">한국어</option>
+			                                  	<option value="english">영어</option>
+			                                  	<option value="chinese">중국어</option>
+			                                  	<option value="japanese">일본어</option>
+			                                  	<option value="direct">직접입력</option>
 			                                  </select>
+			                                  <input type="text" class="form-control" id="directValue" name="directValue"/>
 			                                </div>
 		                                </div>
 		                                <div class="col-md-6">
@@ -69,7 +78,9 @@
 		        		            </div>
 		        		            <div class="row" style="margin-top:20px;">
 		                                <div class="col-md-12">
-		                                  <button name="submitBtn" type="button" class="btn btn-primary btn-sm">추가</button>
+			                                <div class="col-md-12">
+			                                  <button name="submitBtn" type="button" class="btn btn-primary btn-sm" style="width:100%;">추가</button>
+			                                </div>
 		                                </div>
 		                            </div>
 		                            </form>
@@ -84,13 +95,22 @@
 	</div>
 <script>
 $(document).ready(function() {
-    $("button[name='submitBtn']").click(function() {
-   		var form = $("#noticeForm")[0];	
-   	    var formData = new FormData(form);
-   	    console.log("form은 :::"+form+"\nformData는 :::"+formData);
+	
+$("#directValue").hide();
+$("#language").change(function() {
+		if($("#language").val() == "direct") {
+			$("#directValue").show();
+		}  else {
+			$("#directValue").hide();
+		}
+	});
 
-       /* $.ajax({
-              url: '/admin/insertNotice',
+    $("button[name='submitBtn']").click(function() {
+   		var form = $("#brochureForm")[0];	
+   	    var formData = new FormData(form);
+
+       $.ajax({
+              url: '/admin/insertBrochure',
               type: 'POST',
               enctype: "multipart/form-data",
               data: formData,
@@ -98,12 +118,12 @@ $(document).ready(function() {
               processData: false,
               success: function(data, textStatus, jqXHR) {
                   alert("확인");
-                  location.href='/admin/notice';
+                  location.href='/admin/brochure';
               },
               error: function (request, status, error) {
-                    console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+                    console.log("code:"+request.status+"\n"+"error:"+error+"\n"+"message:"+request.responseText);
               }
-        }); */
+        });
     });
 });
 	    

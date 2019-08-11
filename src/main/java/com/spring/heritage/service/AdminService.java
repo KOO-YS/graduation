@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.spring.heritage.dao.AdminDao;
 import com.spring.heritage.vo.CoordVO;
+import com.spring.heritage.vo.GuidebookVO;
 import com.spring.heritage.vo.NoticeImgVO;
 import com.spring.heritage.vo.NoticeVO;
 
@@ -47,5 +48,23 @@ public class AdminService {
 			msg = "좌표값 변경";
 		}
 		return msg;
+	}
+
+	public CoordVO getCoord() {
+		return adminDao.getCoord();
+	}
+
+	public String insertBrochure(GuidebookVO guideVo) {
+		int success = 0;
+		String msg = "브로셔 등록 실패";
+		success = adminDao.insertBrochure(guideVo);
+		if(success>0) {
+			msg = "브로셔 등록 성공";
+		}
+		return msg;
+	}
+
+	public List<GuidebookVO> getBrochure() {
+		return adminDao.getBrochure();
 	}
 }
