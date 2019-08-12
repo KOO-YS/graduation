@@ -220,7 +220,7 @@
           <div class="col-md-6 col-lg-6 mb-6 mb-lg-6">
             <div class="h-entry">
               <a href="/data/brochure"><img src="/static/images/img_1.jpg" alt="Image" class="img-fluid"></a>
-              <h2 class="font-size-regular"><a href="/data/brochure">가이드북</a></h2>
+              <h2 class="font-size-regular"><a href="/data/brochure">간행물</a></h2>
               <div class="meta mb-4">James Phelps <span class="mx-2">&bullet;</span> Jan 18, 2019<span class="mx-2">&bullet;</span> <a href="single.html">News</a></div>
             </div> 
           </div>

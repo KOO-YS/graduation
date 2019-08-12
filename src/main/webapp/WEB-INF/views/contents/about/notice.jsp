@@ -66,14 +66,15 @@
 				    </tr>
 				  </thead>
 				  <tbody>
+				  <c:forEach var="no" items="${notice}">
 				    <tr>
 				      <th scope="row">1</th>
-				      <td>Mark</td>
-				      <td>Otto</td>
-				      <td>@mdo</td>
-				      <td>없</td>
-				      <td>12</td>
+				      <td>${no.title }</td>
+				      <td>${no.writer }</td>
+				      <td>${no.content }</td>
+				      <td>${no.regdate }</td>
 				    </tr>
+				  </c:forEach>
 				  </tbody>
 				</table>
             </blockquote>

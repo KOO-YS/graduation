@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.spring.heritage.dao.ContentDao">
+	<select id="getNotice" resultType="com.spring.heritage.vo.NoticeVO">
+		SELECT *
+			FROM notice
+	</select>
+	<select id="getBrochure" resultType="com.spring.heritage.vo.GuidebookVO">
+		SELECT *
+			FROM guidebook
+	</select>
+	<!-- 파일 다운 -->
+	<select id="fileDown" parameterType="int" resultType="com.spring.heritage.vo.GuidebookVO">
+		SELECT 
+			*
+		FROM guidebook
+		WHERE pk = #{pk}
+	</select>
+</mapper>

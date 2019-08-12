@@ -64,34 +64,19 @@
 	          <div class="col-md-9 blog-content">
 	          <blockquote class="bg-light">
 	            <div class="row">
-			         <div class="col-md-6 col-lg-6 mb-6 mb-lg-6">
-			            <div class="h-entry">
-			              <a href="single.html"><img src="/static/images/img_1.jpg" alt="Image" class="img-fluid"></a>
-			              <h2 class="font-size-regular"><a href="single.html">한국어</a></h2>
-			              <div class="meta mb-4">Ham Brook <span class="mx-2">&bullet;</span> Jan 18, 2019<span class="mx-2">&bullet;</span> <a href="single.html">News</a></div>
-			            </div>
-			         </div>
-			         <div class="col-md-6 col-lg-6 mb-6 mb-lg-6">
-			            <div class="h-entry">
-			              <a href="single.html"><img src="/static/images/img_1.jpg" alt="Image" class="img-fluid"></a>
-			              <h2 class="font-size-regular"><a href="single.html">English</a></h2>
-			              <div class="meta mb-4">Ham Brook <span class="mx-2">&bullet;</span> Jan 18, 2019<span class="mx-2">&bullet;</span> <a href="single.html">News</a></div>
-			            </div>
-			         </div>
-			         <div class="col-md-6 col-lg-6 mb-6 mb-lg-6">
-			            <div class="h-entry">
-			              <a href="single.html"><img src="/static/images/img_1.jpg" alt="Image" class="img-fluid"></a>
-			              <h2 class="font-size-regular"><a href="single.html">中國語</a></h2>
-			              <div class="meta mb-4">Ham Brook <span class="mx-2">&bullet;</span> Jan 18, 2019<span class="mx-2">&bullet;</span> <a href="single.html">News</a></div>
-			            </div>
-			         </div>
-		            <div class="col-md-6 col-lg-6 mb-6 mb-lg-6">
-			            <div class="h-entry">
-			              <a href="single.html"><img src="/static/images/img_1.jpg" alt="Image" class="img-fluid"></a>
-			              <h2 class="font-size-regular"><a href="single.html">日本語</a></h2>
-			              <div class="meta mb-4">Ham Brook <span class="mx-2">&bullet;</span> Jan 18, 2019<span class="mx-2">&bullet;</span> <a href="single.html">News</a></div>
-			            </div>
-			         </div>
+			         <c:forEach var="bro" items="${brochure}">
+			            <div class="col-md-6 col-lg-6 mb-6 mb-lg-6">
+				            <div class="h-entry">
+				              <a href="single.html"><img src="/static/images/img_1.jpg" alt="Image" class="img-fluid"></a>
+				              <h2 class="font-size-regular"><a href="single.html">${bro.title}</a></h2>
+				              <div class="meta mb-4">
+				              	${bro.lang}
+				              	<span class="mx-2">&bullet;</span> ${bro.updateTime }
+				              	<button type="button" onclick="fileDown('${bro.pk}')" class="btn btn-primary" style="padding:5px 10px; float: right;">download</button>
+				              </div>
+				            </div>
+				         </div>
+			         </c:forEach>
 			         
 	            </div>
 	            </blockquote>
@@ -126,6 +111,13 @@
 
   
   <script src="/static/js/main.js"></script>
-    
   </body>
+  <script>
+  
+  	function fileDown(pk){
+  		if(confirm("파일을 다운받겠습니까?")){
+  			location.href="/data/fileDown/"+pk;
+  		}
+  	}
+  </script>  
 </html>
