@@ -42,7 +42,7 @@
           </div>
             <div class="col-md-9">
 	          <p class="section-sub-title" style="padding-top:60px;">
-	          	공지사항
+	          	공지사항 상세보기
 		       	<b style="font-weight:600; float:right;">메인 > 경복궁관리소 > 공지사항</b>	
 	          </p>
             </div>
@@ -54,28 +54,34 @@
           <!-- 포스트 -->
           <div class="col-md-9 blog-content">
             <blockquote class="bg-light">
-            	<table class="table table-hover table-sm" style="text-align:center">
-				  <thead>
-				    <tr>
-				      <th scope="col">번호</th>
-				      <th scope="col">제목</th>
-				      <th scope="col">작성자</th>
-				      <th scope="col">등록일</th>
-				      <th scope="col">조회수</th>
-				    </tr>
-				  </thead>
-				  <tbody>
-				  <c:forEach var="no" items="${notice}">
-				    <tr>
-				      <th scope="row">${no.pk }</th>
-				      <td><a href="/about/notice/${no.pk }">${no.title }</a></td>
-				      <td>${no.writer }</td>
-				      <td>${no.regdate }</td>
-				      <td>${no.viewCnt }</td>
-				    </tr>
-				  </c:forEach>
-				  </tbody>
-				</table>
+            	<div class="container-fluid">
+					<div class="row">
+						<div class="col-md-12" style="padding:20px;">
+							<div class="row">
+								<div class="col-md-6 border-right">
+									<h3>
+										${detail.title}
+									</h3>
+								</div>
+								<div class="col-md-2 border-right">
+									<p>${detail.writer }</p>
+								</div>
+								<div class="col-md-4">
+									<p>${detail.regdate }</p>
+								</div>
+							</div>
+							<hr>
+							<div class="row">
+								<div class="col-md-12">
+									<img src="/static/upload/notice/${img.saveName}" style="width:100%;">
+	                                  <%-- DB변경후
+	                                  <img src="${img.imgPath}${img.saveName}"> 로 바꾸기 --%>										
+									${detail.content }
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
             </blockquote>
           </div>
           <!-- 포스트 끝 -->
@@ -105,6 +111,12 @@
 
   
   <script src="/static/js/main.js"></script>
-    
+<!--   <script>
+  var str = $('.#textarea').val();
+
+  str = str.split('<br/>').join("\r\n");
+
+  $('#textarea').val(str);
+  </script>  -->
   </body>
 </html>

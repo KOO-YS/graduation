@@ -22,6 +22,28 @@
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   </head>
   <body>
+  <!-- 모달 -->
+ <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">×</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+          <p>Some text in the modal.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+<!-- 모달 -->
   
   <div class="site-wrap">
 
@@ -68,8 +90,8 @@
 					<div class="col-md-7">
 					
 				 						  	
-						<p style="float:left;">* 2019년 00월 00일 예약 현황</p>
-						<button class="btn btn-primary" style="float:right;">예약 확인 및 취소</button>
+						<p id="today" style="float:left;"></p>
+						<button class="btn btn-primary" style="float:right; padding:7px 20px;">예약 확인 및 취소</button>
 						<table class="table table-sm" style="margin-top:60px; text-align:center;">
 						  <thead class="thead-light">
 						    <tr>
@@ -151,16 +173,31 @@
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script>
-var array = ["2019-07-14","2019-07-15","2019-07-16"];
+var date = new Date();
+var year = date.getFullYear();
+var month = date.getMonth()+1;
+var day = date.getDate();
+
+document.getElementById('today').innerHTML = "* "+year+"년 "+month+"월 "+day+"일 예약 현황";
+/* 제한된 날짜 배열*/
+var array = ["2019-08-14","2019-08-15","2019-08-16"];
 $(document).ready(function(){
 	$('#datepicker').datepicker({
-	    beforeShowDay: function(date){
-	    	 var string = jQuery.datepicker.formatDate('yy-mm-dd', date);
+	    beforeShowDay: function(date){	//날짜 제한
+	   		var string = jQuery.datepicker.formatDate('yy-mm-dd', date);
 	        return [ array.indexOf(string) == -1 ]
 	    }
 	});
 });
-	
+
+// 클릭시 값 추출
+$('#datepicker').on("change", function(){
+	console.log($("#datepicker").val());
+	if(confirm($("#datepicker").val()+"에 예약하시겠습니까?")){
+		$("#myModal").modal();
+	}
+});
+
 
 </script>
   </body>

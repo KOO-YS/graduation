@@ -70,7 +70,7 @@
 	                                    <td>${no.title}</td>
 	                                    <td>${no.writer}</td>
 	                                    <td>${no.content}</td>
-	                                    <td><button type="button" class="btn btn-sm btn-primary">수정하기</button></td>
+	                                    <td><button type="button" class="btn btn-sm btn-primary" onclick="location.href='/admin/notice/${no.pk}'">수정하기</button></td>
 	                                  </tr>
 	                                </c:forEach>
 	                              
@@ -86,6 +86,12 @@
 			</div>
 		</div>
 	</div>
+<script>
+/* var str = $('.#textarea').val();
 
+str = str.split('<br/>').join("\r\n");
+
+$('#textarea').val(str); */
+</script>
 </body>
 </html>

@@ -52,9 +52,13 @@
           <c:import url="/WEB-INF/views/contents/guide/guide_category.jsp"></c:import>
           <!-- 사이드바 끝 -->
           <!-- 포스트 -->
+          <!-- DB에 저장된 좌표값 -->
           <div class="col-md-9 blog-content">
+		     <input type="hidden" id="nowX" value="${getCoord.coordX}">
+	    	 <input type="hidden" id="nowY" value="${getCoord.coordY}">
             <blockquote class="bg-light">
-            	<div id="map" style="width:100%;height:350px;"></div>
+            	<!-- <div id="map" style="width:100%;height:350px;"></div> -->
+            	<div id="map" style="width:100%;height:350px; margin: 50px 0;"></div>
             </blockquote>
           </div>
           <!-- 포스트 끝 -->
@@ -66,17 +70,7 @@
 	<c:import url="/WEB-INF/views/structure/footer.jsp"></c:import>
 
   </div> <!-- .site-wrap -->
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=117569877c4f0f88d82995089cb983ae"></script> <!-- 임시키 -->
-<script>
-var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
-mapOption = { 
-    center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
-    level: 3 // 지도의 확대 레벨
-};
 
-//지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
-var map = new kakao.maps.Map(mapContainer, mapOption); 
-</script>
 
    <script src="/static/js/jquery-3.3.1.min.js"></script>
   <script src="/static/js/jquery-migrate-3.0.1.min.js"></script>
@@ -95,6 +89,26 @@ var map = new kakao.maps.Map(mapContainer, mapOption);
 
   
   <script src="/static/js/main.js"></script>
-    
+  <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=117569877c4f0f88d82995089cb983ae&libraries=services"></script> <!-- 임시키 -->
+	<script>
+	
+	var container = document.getElementById('map'); // 지도를 담을 영역의 DOM 레퍼런스 
+	var options = { //지도를 생성할 때 필요한 기본 옵션 
+		  center: new daum.maps.LatLng($("#nowX").val(), $("#nowY").val()), // 지도의 중심좌표.
+		  level: 5 // 지도의 레벨(확대, 축소 정도) 
+		}; 
+	
+	var map = new daum.maps.Map(container, options); // 지도 생성 및 객체 리턴
+	//마커 표시될 위치
+	var markerPosition  = new daum.maps.LatLng($("#nowX").val(),$("#nowY").val());
+	//마커 생성
+	var marker = new daum.maps.Marker({
+	    position: markerPosition
+	});
+	
+	//마커를 지도 위에 표시
+	marker.setMap(map);
+	
+	</script>
   </body>
 </html>

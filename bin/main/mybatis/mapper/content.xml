@@ -17,4 +17,20 @@
 		FROM guidebook
 		WHERE pk = #{pk}
 	</select>
+	<select id="getNoticeDetail" parameterType="int" resultType="com.spring.heritage.vo.NoticeVO">
+		SELECT
+			*
+		FROM notice
+		WHERE pk = #{pk}
+	</select>
+	<select id="getNoticeImg" parameterType="int" resultType="com.spring.heritage.vo.NoticeImgVO">
+		SELECT
+			*
+		FROM notice_img
+		WHERE noticePk = #{noticePk}
+	</select>
+	<select id="getCoord" resultType="com.spring.heritage.vo.CoordVO">
+		SELECT *
+			FROM coord
+	</select>
 </mapper>

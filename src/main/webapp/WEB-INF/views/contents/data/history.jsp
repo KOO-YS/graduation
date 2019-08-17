@@ -17,7 +17,6 @@
     <link rel="stylesheet" href="/static/css/aos.css">
 
     <link rel="stylesheet" href="/static/css/style.css">
-    
   </head>
   <body>
   
@@ -54,7 +53,21 @@
           <!-- 포스트 -->
           <div class="col-md-9 blog-content">
             <blockquote class="bg-light">
-            	내용
+            	<div class="card" style="width: 18rem;">
+				  <!-- <img class="card-img-top" src="/static/images/person_1.jpg" alt="Card image cap"> -->
+				  <div class="card-img-top" style="height:150px; background:pink;">1300년대</div>
+				  <div class="card-body">
+				    <ul class="card-text" style="list-style:none;">
+				    	<li>test</li>
+				    	<li>222</li>
+				    	<li>test</li>
+				    	<li>222</li>
+				    	<li>test</li>
+				    	<li>222</li>
+				    </ul>
+				  </div>
+				</div>
+            	
             </blockquote>
           </div>
           <!-- 포스트 끝 -->

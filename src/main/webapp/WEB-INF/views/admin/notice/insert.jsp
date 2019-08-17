@@ -51,7 +51,7 @@
 		                              <div class="form-group row">
 		                                <label for="content" class="col-12 col-form-label">내용</label> 
 		                                <div class="col-12">
-		                                  <textarea id="description" name="content" cols="40" rows="4" class="form-control"></textarea>
+		                                  <textarea id="content" name="content" cols="40" rows="4" class="form-control"></textarea>
 		                                </div>
 		                              </div> 
 		                              <div class="form-group row">
@@ -78,10 +78,17 @@
 <script>
 $(document).ready(function() {
     $("button[name='submitBtn']").click(function() {
+
+    	var str = $('#content').val();
+		str = str.replace(/(?:\r\n|\r|\n)/g, '<br/>');
+		$('#content').val(str);
+		alert("텍스트 공백 변환");
+		
    		var form = $("#noticeForm")[0];	
    	    var formData = new FormData(form);
    	    console.log("form은 :::"+form+"\nformData는 :::"+formData);
 
+		
        $.ajax({
               url: '/admin/insertNotice',
               type: 'POST',

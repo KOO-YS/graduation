@@ -14,7 +14,7 @@
    	
    	<link rel="stylesheet" href="/static/css/bootstrap.min.css">
    	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-   	<script src="/static/js/bootstrap.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 
 </head>
 
@@ -29,10 +29,10 @@
 			        <div class="card-body">
 			            <div class="row">
 			                <div class="col-md-2 border-right">
-			                    <h4>Reservation</h4>
+			                    <h4>Notice</h4>
 			                </div>
 			                <div class="col-md-6">
-			                    <button type="button" class="btn btn-sm btn-primary">sample button</button>
+			                    <button type="button" class="btn btn-sm btn-primary" onclick="location.href='/admin/notice'">목록</button>
 			                </div>
 			                
 			            </div>
@@ -41,28 +41,33 @@
 			            	<div class="col-md-9">
 				            	<div class="col-md-12 bg-light card-body">
 		        		            <h4>공지사항 추가</h4>
-		        		            <form>
+		        		            <form id="noticeForm">
+		        		            
 		                              <div class="form-group row">
-		                                <label for="text" class="col-12 col-form-label">글 제목</label> 
+		                                <label for="title" class="col-12 col-form-label">글 제목</label> 
 		                                <div class="col-12">
-		                                  <input id="title" name="title" class="form-control here" type="text">
+		                                  <input id="title" name="title" class="form-control here" type="text" value="${detail.title }">
 		                                </div>
 		                              </div>
 		                              <div class="form-group row">
-		                                <label for="description" class="col-12 col-form-label">내용</label> 
+		                                <label for="content" class="col-12 col-form-label">내용</label> 
 		                                <div class="col-12">
-		                                  <textarea id="description" name="description" cols="40" rows="4" class="form-control"></textarea>
+		                                  <textarea id="content" name="content" cols="40" rows="4" class="form-control">${detail.content}</textarea>
 		                                </div>
 		                              </div> 
 		                              <div class="form-group row">
-		                                <label for="slug" class="col-12 col-form-label">이미지</label> 
+		                                <label for="image" class="col-12 col-form-label">이미지</label> 
 		                                <div class="col-12">
+		                                  <img src="/static/upload/notice/${img.saveName}" style="width:100%;">
+		                                  <%-- DB변경후
+		                                  <img src="${img.imgPath}${img.saveName}"> 로 바꾸기 --%>
+		                                  
 		                                  <input id="image" name="image" class="form-control here" type="file">
 		                                </div>
 		                              </div>
 		                              <div class="form-group row">
 		                                <div class="col-12">
-		                                  <button name="submit" type="submit" class="btn btn-primary btn-sm">추가</button>
+		                                  <button name="submitBtn" type="button" class="btn btn-primary btn-sm">추가</button>
 		                                </div>
 		                              </div>
 		                            </form>
@@ -75,5 +80,38 @@
 			</div>
 		</div>
 	</div>
+<script>
+$(document).ready(function() {
+    $("button[name='submitBtn']").click(function() {
+
+    	var str = $('#content').val();
+		str = str.replace(/(?:\r\n|\r|\n)/g, '<br/>');
+		$('#content').val(str);
+		alert("텍스트 공백 변환");
+		
+   		var form = $("#noticeForm")[0];	
+   	    var formData = new FormData(form);
+   	    console.log("form은 :::"+form+"\nformData는 :::"+formData);
+
+		
+       $.ajax({
+              url: '/admin/insertNotice',
+              type: 'POST',
+              enctype: "multipart/form-data",
+              data: formData,
+              contentType: false,
+              processData: false,
+              success: function(data, textStatus, jqXHR) {
+                  alert("확인");
+                  location.href='/admin/notice';
+              },
+              error: function (request, status, error) {
+                    console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+              }
+        });
+    });
+});
+	    
+</script>
 </body>
 </html>

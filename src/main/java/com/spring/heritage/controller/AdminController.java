@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -70,15 +71,22 @@ public class AdminController {
 		imgVo.setNoticePk(noticeVo.getPk());	// 저장된 공지글의 pk값 * selectKey 사용
 		imgVo.setOriName(oriName);
 		imgVo.setSaveName(saveName);
-		imgVo.setImgPath(LOCAL_PATH+NOTICE_IMG_PATH);
+		imgVo.setImgPath(NOTICE_IMG_PATH);
 		
 		String msg2 = adminService.insertNoticeImg(imgVo);
 		System.out.println(msg2);
 		return "admin/notice";
 	}
+	/* 공지사항 상세 */
+	@RequestMapping("/admin/notice/{pk}")
+	public String goToNoticeDetail(@PathVariable int pk, Model model) {
+		model.addAttribute("detail", adminService.getNoticeDetail(pk));
+		model.addAttribute("img", adminService.getNoticeImg(pk));
+		return "admin/notice/detail";
+	}
 	/* 위치 정보 페이지 */
 	@RequestMapping("/admin/location")
-	public String goTOLocation(Model model) {
+	public String goToLocation(Model model) {
 		model.addAttribute("getCoord", adminService.getCoord());
 		return "admin/location";
 	}
@@ -108,7 +116,17 @@ public class AdminController {
 	/* 예약관리 페이지 */
 	@RequestMapping("/admin/reservation")
 	public String goToReservation() {
-		return "admin/reservation";
+		return "admin/reservation/reservation";
+	}
+	/* 경회루 예약 페이지 */
+	@RequestMapping("/admin/reservation/special")
+	public String goToSpecial() {
+		return "admin/reservation/special";
+	}
+	/* 한국어 단체 예약 페이지 */
+	@RequestMapping("/admin/reservation/korean")
+	public String goToKorean() {
+		return "admin/reservation/korean";
 	}
 	/* 간행물 업로드 -> 다운 */
 	@RequestMapping("/admin/brochure")
@@ -137,7 +155,7 @@ public class AdminController {
 		guideVo.setLang(language);
 		guideVo.setOriName(oriName);
 		guideVo.setSaveName(saveName);
-		guideVo.setFilePath(LOCAL_PATH+BROCHURE_PATH);
+		guideVo.setFilePath(BROCHURE_PATH);
 		
 		String msg = adminService.insertBrochure(guideVo);
 		return "admin/brochure";

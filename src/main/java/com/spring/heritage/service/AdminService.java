@@ -67,4 +67,12 @@ public class AdminService {
 	public List<GuidebookVO> getBrochure() {
 		return adminDao.getBrochure();
 	}
+
+	public NoticeVO getNoticeDetail(int pk) {
+		return adminDao.getNoticeDetail(pk);
+	}
+
+	public NoticeImgVO getNoticeImg(int pk) {
+		return adminDao.getNoticeImg(pk);
+	}
 }

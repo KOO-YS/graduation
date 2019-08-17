@@ -65,7 +65,8 @@ public class ContentController {
 	}
 	/* 오시는길 */
 	@RequestMapping("/guide/location")
-	public String goToLocation() {
+	public String goToLocation(Model model) {
+		model.addAttribute("getCoord", contentService.getCoord());
 		return "contents/guide/location";
 	}
 	/* 주변 둘러보기 */
@@ -202,6 +203,13 @@ public class ContentController {
 	public String goToNotice(Model model) {
 		model.addAttribute("notice", contentService.getNotice());
 		return "contents/about/notice";
+	}
+	/* 공지사항 디테일 */
+	@RequestMapping("/about/notice/{pk}")
+	public String goToNoticeDetail(@PathVariable int pk, Model model) {
+		model.addAttribute("detail", contentService.getNoticeDetail(pk));
+		model.addAttribute("img", contentService.getNoticeImg(pk));
+		return "contents/about/detail";
 	}
 
 }

@@ -26,4 +26,8 @@ public interface AdminDao {
 
 	List<GuidebookVO> getBrochure();
 
+	NoticeVO getNoticeDetail(int pk);
+
+	NoticeImgVO getNoticeImg(int pk);
+
 }
