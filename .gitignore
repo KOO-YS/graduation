@@ -30,4 +30,5 @@ out/
 
 ### VS Code ###
 .vscode/
-*.png
+bin/main/static/upload
+src/main/resources/static/upload
