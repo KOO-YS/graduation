@@ -26,7 +26,9 @@ public class ContentController {
 
 	/* 메인 페이지 */
 	@RequestMapping("/main")
-	public String goToMain() {
+	public String goToMain(Model model) {
+		model.addAttribute("notice", contentService.getSelected());
+		model.addAttribute("noticeImg",contentService.getSelectedImg());
 		return "main";
 	}
 

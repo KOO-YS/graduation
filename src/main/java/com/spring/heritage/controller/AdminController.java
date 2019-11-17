@@ -87,7 +87,8 @@ public class AdminController {
 	/* 공지사항 선택값 */
 	@RequestMapping("/admin/selectNotice/{pk}")
 	public String selectNotice(@PathVariable int pk) {
-		return "admin/notice";
+		adminService.selectNotice(pk);
+		return "redirect:/admin/notice";
 	}
 	/* 위치 정보 페이지 */
 	@RequestMapping("/admin/location")

@@ -56,9 +56,11 @@
 	                                    <td>
 	                                        <div class="form-check-inline">
 	                                        	<input type="radio" name="selected" class="form-check-input" value="${no.pk}">
+	                                        	<%-- <input type="radio" name="selected" class="form-check-input" value="${no.selected}"> --%>
+	                                        	${no.selected}
 	                                       </div>
 	                                    </td>  
-	                                    <td>${no.pk}</td>
+	                                    <td id="pk">${no.pk}</td>
 	                                    <td>${no.title}</td>
 	                                    <td>${no.writer}</td>
 	                                    <td>${no.content}</td>
@@ -77,16 +79,20 @@
 		</div>
 	</div>
 <script>
+/* $(document).ready(function(){
+	$("input[type=radio][value='1']").prop("checked",true);
+	$("input[type=hidden][value='1']").prop("checked",true);
+}); */
 function selectNotice(){
 	var sel = $(":input:radio[name=selected]:checked").val();
+	 
 	if(sel == undefined){
 		sel = "선택된 값이 없습니다";
 		alert(sel);
 		return false;
-	} else{
-		location.href="/admin/selectNotice/"+sel;
-		alert('확인');
 	}
+	location.href="/admin/selectNotice/"+sel;
+	alert('선택값 적용');
 }
 </script>
 </body>

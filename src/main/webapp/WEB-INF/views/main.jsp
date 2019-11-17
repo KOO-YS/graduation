@@ -63,8 +63,8 @@
         <img src="/static/images/img_big_1.jpg" alt="Image" class="img-fluid">
         <div class="img-box">
           <span class="sub-title">경복궁</span>
-          <h2>경복궁 야간 특별관람</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis eveniet, voluptatem harum provident iusto modi explicabo! Aperiam velit reiciendis, eius impedit ea necessitatibus facilis nobis ipsum, architecto cum, doloribus nesciunt.</p>
+          <h2>${notice.title}</h2>
+          <p>${notice.content }</p>
           <p><a href="#" class="btn btn-outline-dark">Read More</a></p>
         </div>
       </div>  

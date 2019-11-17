@@ -40,6 +40,14 @@ public class ContentService {
 	public CoordVO getCoord() {
 		return contentDao.getCoord();
 	}
+
+	public NoticeVO getSelected() {
+		return contentDao.getSelected();
+	}
+
+	public Object getSelectedImg() {
+		return contentDao.getSelectedImg();
+	}
 	
 	
 }

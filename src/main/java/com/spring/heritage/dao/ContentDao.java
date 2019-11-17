@@ -23,4 +23,8 @@ public interface ContentDao {
 	NoticeImgVO getNoticeImg(int pk);
 
 	CoordVO getCoord();
+
+	NoticeVO getSelected();
+
+	NoticeImgVO getSelectedImg();
 }

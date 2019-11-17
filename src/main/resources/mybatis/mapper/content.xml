@@ -2,6 +2,18 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.spring.heritage.dao.ContentDao">
+	<!-- 대표 공지사항 -->
+	<select id="getSelected" resultType="com.spring.heritage.vo.NoticeVO">
+		SELECT 
+			*
+		FROM notice
+		WHERE selected = 1;
+	</select>
+	<!-- 대표 공지사항 이미지 -->
+	<!-- <resultMap type="NoticeVO" id="NoticeVO">
+		<result column="selected" property="selected"/>
+		<result column="pk" property=""/>
+	</resultMap> -->
 	<select id="getNotice" resultType="com.spring.heritage.vo.NoticeVO">
 		SELECT *
 			FROM notice

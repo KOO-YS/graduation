@@ -6,7 +6,7 @@ public class NoticeVO {
 	String writer;
 	String content;
 	String regdate;
-	int viewCnt;
+	int selected;
 	
 	public int getPk() {
 		return pk;
@@ -38,17 +38,17 @@ public class NoticeVO {
 	public void setRegdate(String regdate) {
 		this.regdate = regdate;
 	}
-	public int getViewCnt() {
-		return viewCnt;
+	public int getSelected() {
+		return selected;
 	}
-	public void setViewCnt(int viewCnt) {
-		this.viewCnt = viewCnt;
+	public void setSelected(int selected) {
+		this.selected = selected;
 	}
 	
 	@Override
 	public String toString() {
 		return "NoticeVO [pk=" + pk + ", title=" + title + ", writer=" + writer + ", content=" + content + ", regdate="
-				+ regdate + ", viewCnt=" + viewCnt + "]";
+				+ regdate + ", selected=" + selected + "]";
 	}
 	
 	

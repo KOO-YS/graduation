@@ -61,7 +61,6 @@
 				      <th scope="col">제목</th>
 				      <th scope="col">작성자</th>
 				      <th scope="col">등록일</th>
-				      <th scope="col">조회수</th>
 				    </tr>
 				  </thead>
 				  <tbody>
@@ -71,7 +70,6 @@
 				      <td><a href="/about/notice/${no.pk }">${no.title }</a></td>
 				      <td>${no.writer }</td>
 				      <td>${no.regdate }</td>
-				      <td>${no.viewCnt }</td>
 				    </tr>
 				  </c:forEach>
 				  </tbody>
