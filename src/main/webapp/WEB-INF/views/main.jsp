@@ -84,8 +84,10 @@
               <div class="unit-4-icon mr-4"><span class="text-primary icon-autorenew"></span></div>
               <div>
                 <h3>관람규칙규정</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae eligendi at.</p>
-                <p><a href="/guide/roles">Learn More</a></p>
+                <p>
+	                관람하시면서 꼭 준수해 주셔야 할 사항입니다.
+				</p>
+                <p><a href="/guide/roles">자세히보기</a></p>
               </div>
             </div>
           </div>
@@ -94,8 +96,8 @@
               <div class="unit-4-icon mr-4"><span class="text-primary icon-backspace"></span></div>
               <div>
                 <h3>관람코스</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae eligendi at.</p>
-                <p><a href="/guide/roles">Learn More</a></p>
+                <p>광화문에서부터 신무문까지 관람코스를 소개합니다</p>
+                <p><a href="/guide/roles">자세히보기</a></p>
               </div>
             </div>
           </div>
@@ -104,8 +106,8 @@
               <div class="unit-4-icon mr-4"><span class="text-primary icon-av_timer"></span></div>
               <div>
                 <h3>해설안내</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae eligendi at.</p>
-                <p><a href="/guide/roles">Learn More</a></p>
+                <p>해설사의 스토리텔링을 들으며 경복궁을 둘러볼 수 있습니다</p>
+                <p><a href="/guide/roles">자세히보기</a></p>
               </div>
             </div>
           </div>
@@ -116,8 +118,8 @@
               <div class="unit-4-icon mr-4"><span class="text-primary icon-beenhere"></span></div>
               <div>
                 <h3>오시는길</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae eligendi at.</p>
-                <p><a href="/guide/roles">Learn More</a></p>
+                <p>경복궁까지 오시는 길을 확인할 수 있습니다</p>
+                <p><a href="/guide/roles">자세히보기</a></p>
               </div>
             </div>
           </div>
@@ -126,8 +128,8 @@
               <div class="unit-4-icon mr-4"><span class="text-primary icon-business_center"></span></div>
               <div>
                 <h3>편의시설 안내</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae eligendi at.</p>
-                <p><a href="/guide/roles">Learn More</a></p>
+                <p>편의시설 정보와 권역을 확인할 수 있습니다</p>
+                <p><a href="/guide/roles">자세히보기</a></p>
               </div>
             </div>
           </div>
@@ -136,8 +138,8 @@
               <div class="unit-4-icon mr-4"><span class="text-primary icon-cloud_done"></span></div>
               <div>
                 <h3>주변 둘러보기</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae eligendi at.</p>
-                <p><a href="/guide/roles">Learn More</a></p>
+                <p>경복궁 주변의 고궁 및 기타 관람에 대해 확인할 수 있습니다.</p>
+                <p><a href="/guide/roles">자세히보기</a></p>
               </div>
             </div>
           </div>
@@ -162,7 +164,7 @@
               <img src="/static/images/slide_4.jpg" alt="Image" class="img-fluid">
             </div>
             <div class="custom-direction">
-              <a href="#" class="custom-prev">Prev</a><a href="#" class="custom-next">Next</a>
+              <a href="#" class="custom-prev">&lt; </a><a href="#" class="custom-next">&gt;</a>
             </div>
           </div>
           <div class="col-md-6 order-md-1" data-aos="fade">
@@ -178,7 +180,7 @@
                   <div class="unit-4-icon mr-4 mb-3"><span class="text-primary icon-av_timer"></span></div>
                   <div>
                     <h3>경회루 특별관람 예약</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis consect.</p>
+                    <p>4월부터 10월까지 진행되는 경회루 특별관람을 미리 예약하실 수 있습니다</p>
                     <p class="mb-0"><a href="/tour" class="btn btn-primary btn-sm">예약하기</a></p>
                   </div>
                 </div>
@@ -188,7 +190,7 @@
                   <div class="unit-4-icon mr-4 mb-3"><span class="text-primary icon-assignment"></span></div>
                   <div>
                     <h3>한국어 단체해설 예약</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis.</p>
+                    <p>해설사의 스토리텔링과 함께 경복궁을 둘러볼 수 있습니다</p>
                     <p class="mb-0"><a href="/tour" class="btn btn-primary btn-sm">예약하기</a></p>
                   </div>
                 </div>
@@ -212,16 +214,16 @@
         <div class="row">
           <div class="col-md-6 col-lg-6 mb-6 mb-lg-6">
             <div class="h-entry">
-              <a href="/data/history"><img src="/static/images/img_1.jpg" alt="Image" class="img-fluid"></a>
+              <a href="/data/history"><img src="/static/images/past.jpg" alt="Image" class="img-fluid" height="340px";></a>
               <h2 class="font-size-regular"><a href="/data/history">경복궁의 역사</a></h2>
-              <div class="meta mb-4">Ham Brook <span class="mx-2">&bullet;</span> Jan 18, 2019<span class="mx-2">&bullet;</span> <a href="single.html">News</a></div>
+              <div class="meta mb-4">조선 왕조 제일의 법궁, 경복궁의 역사</div>
             </div> 
           </div>
           <div class="col-md-6 col-lg-6 mb-6 mb-lg-6">
             <div class="h-entry">
-              <a href="/data/brochure"><img src="/static/images/img_1.jpg" alt="Image" class="img-fluid"></a>
+              <a href="/data/brochure"><img src="/static/images/course.gif" alt="Image" class="img-fluid"></a>
               <h2 class="font-size-regular"><a href="/data/brochure">간행물</a></h2>
-              <div class="meta mb-4">James Phelps <span class="mx-2">&bullet;</span> Jan 18, 2019<span class="mx-2">&bullet;</span> <a href="single.html">News</a></div>
+              <div class="meta mb-4">경복궁에 대해 더 자세히 알 수 있는 간행물 다운로드</div>
             </div> 
           </div>
           
@@ -232,7 +234,7 @@
     <c:import url="/WEB-INF/views/structure/footer.jsp"></c:import>
 
   </div> <!-- .site-wrap -->
-
+  
   <script src="/static/js/jquery-3.3.1.min.js"></script>
   <script src="/static/js/jquery-migrate-3.0.1.min.js"></script>
   <script src="/static/js/jquery-ui.js"></script>

@@ -54,7 +54,7 @@
           <!-- 포스트 -->
           <div class="col-md-9 blog-content">
             <blockquote class="bg-light">
-            	<img alt="course" src="/static/images/course.gif">
+            	<img alt="course" class="img-fluid" src="/static/images/course.gif" onclick="zoomIn();">
             </blockquote>
           </div>
           <!-- 포스트 끝 -->
@@ -65,8 +65,18 @@
 
 	<c:import url="/WEB-INF/views/structure/footer.jsp"></c:import>
 
-  </div> <!-- .site-wrap -->
-
+  	</div> <!-- .site-wrap -->
+	<script type="text/javascript">
+	/* 이미지 확대 */
+	function zoomIn(){
+		var url = "/static/images/course.gif";
+		var name = "관람코스";
+		var option = "width= 1000, height=620, top=100, left=200, location= no";
+		var popup = window.open(url,name, option);
+		// 이미지 크기 style 값
+		popup.document.write("<style>body{margin:0px;}</style><img src='"+url+"' width= 1000px'>");
+	}
+	</script>
    <script src="/static/js/jquery-3.3.1.min.js"></script>
   <script src="/static/js/jquery-migrate-3.0.1.min.js"></script>
   <script src="/static/js/jquery-ui.js"></script>

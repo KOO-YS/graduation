@@ -29,11 +29,31 @@
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
+          <h4 class="modal-title">예약 신청</h4>
           <button type="button" class="close" data-dismiss="modal">×</button>
-          <h4 class="modal-title">Modal Header</h4>
         </div>
         <div class="modal-body">
-          <p>Some text in the modal.</p>
+	        <div class="row">
+	        <div class="col-md-12"><b>00월 00일 예약 </b></div>
+	           	<div class="col-md-3 form-row align-items-center">
+	           		<label class="form-check-label">예약자 성함</label>
+	           	</div>
+	          	<div class="col-md-9" style="margin-bottom: 5px;">
+	          		<input type="text" class="form-control">
+	     		</div>
+              	<div class="col-md-3 form-row align-items-center">
+              		<label class="form-check-label" style="text-align:center;">휴대전화</label>
+             	</div>
+	          	<div class="col-md-9" style="margin-bottom: 5px;">
+	          		<input type="text" class="form-control">
+	     		</div>
+	     		<div class="col-md-3 form-row align-items-center">
+              		<label class="form-check-label" style="text-align:center;">예약 인원</label>
+             	</div>
+	          	<div class="col-md-9">
+	          		<input type="number" class="form-control">
+	     		</div>
+	        </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -106,7 +126,7 @@
 						      <th scope="row">1</th>
 						      <td>Mark</td>
 						      <td>Otto</td>	
-						      <td><button class="btn">예약하기</button></td>
+						      <td><button class="btn" data-toggle="modal" data-target="#myModal">예약하기</button></td>
 						    </tr>
 						    <tr>
 						      <th scope="row">2</th>
@@ -180,11 +200,11 @@ var day = date.getDate();
 
 document.getElementById('today').innerHTML = "* "+year+"년 "+month+"월 "+day+"일 예약 현황";
 /* 제한된 날짜 배열*/
-var array = ["2019-08-14","2019-08-15","2019-08-16"];
+var array= ["08/14/2019","08/19/2019","08/18/2019"]
 $(document).ready(function(){
 	$('#datepicker').datepicker({
 	    beforeShowDay: function(date){	//날짜 제한
-	   		var string = jQuery.datepicker.formatDate('yy-mm-dd', date);
+	   		var string = jQuery.datepicker.formatDate('mm/dd/yy', date);
 	        return [ array.indexOf(string) == -1 ]
 	    }
 	});
@@ -196,6 +216,7 @@ $('#datepicker').on("change", function(){
 	if(confirm($("#datepicker").val()+"에 예약하시겠습니까?")){
 		$("#myModal").modal();
 	}
+	
 });
 
 

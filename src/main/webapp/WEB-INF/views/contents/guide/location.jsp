@@ -109,6 +109,15 @@
 	//마커를 지도 위에 표시
 	marker.setMap(map);
 	
+	// 인포 윈도우 생성
+	var iwContent = '<div style="font-weight:700;">&ensp;경복궁 &emsp;&emsp;<a href="https://map.kakao.com/?map_type=TYPE_MAP&target=car&rt=,,494898,1132795&rt1=&rt2=%EA%B2%BD%EB%B3%B5%EA%B6%81&rtIds=,18619553" target="_blank" >길찾기</a>';
+	var infowindow = new kakao.maps.InfoWindow({
+		position : markerPosition,
+		content : iwContent
+	});	
+	// 인포위도우를 마커위에 표시 
+	// 두번째 marker를 넣어주지 않으면 지도 위에 표시
+	infowindow.open(map, marker);
 	</script>
   </body>
 </html>
