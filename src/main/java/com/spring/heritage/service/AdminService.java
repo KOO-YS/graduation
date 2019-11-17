@@ -75,4 +75,11 @@ public class AdminService {
 	public NoticeImgVO getNoticeImg(int pk) {
 		return adminDao.getNoticeImg(pk);
 	}
+
+	public void selectNotice(int pk) {
+		int before = adminDao.setAllNotice();
+		if(before>0) {
+			adminDao.selectNotice(pk);
+		}
+	}
 }

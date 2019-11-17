@@ -84,6 +84,11 @@ public class AdminController {
 		model.addAttribute("img", adminService.getNoticeImg(pk));
 		return "admin/notice/detail";
 	}
+	/* 공지사항 선택값 */
+	@RequestMapping("/admin/selectNotice/{pk}")
+	public String selectNotice(@PathVariable int pk) {
+		return "admin/notice";
+	}
 	/* 위치 정보 페이지 */
 	@RequestMapping("/admin/location")
 	public String goToLocation(Model model) {

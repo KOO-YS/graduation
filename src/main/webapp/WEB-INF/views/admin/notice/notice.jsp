@@ -42,13 +42,7 @@
 	        		            <table class="table table-hover ">
 	                                <thead class="bg-light ">
 	                                  <tr>
-	                                    <th>
-	                                      <div class="form-check-inline">
-	                                          <label class="form-check-label">
-	                                            <input type="checkbox" class="form-check-input" value="">
-	                                           </label>
-	                                       </div>
-	                                    </th>  
+	                                    <th>선택</th>  
 	                                    <th>글 번호</th>
 	                                    <th>글 제목</th>
 	                                    <th>작성자</th>
@@ -61,9 +55,7 @@
 	                                  <tr>
 	                                    <td>
 	                                        <div class="form-check-inline">
-	                                          <label class="form-check-label">
-	                                            <input type="checkbox" class="form-check-input" value="">
-	                                           </label>
+	                                        	<input type="radio" name="selected" class="form-check-input" value="${no.pk}">
 	                                       </div>
 	                                    </td>  
 	                                    <td>${no.pk}</td>
@@ -73,11 +65,9 @@
 	                                    <td><button type="button" class="btn btn-sm btn-primary" onclick="location.href='/admin/notice/${no.pk}'">수정하기</button></td>
 	                                  </tr>
 	                                </c:forEach>
-	                              
-	                                 
-	                                 
 	                                </tbody>
 	                              </table>
+	                              <button type="button" class="btn btn-sm btn-primary" onclick="selectNotice()">대표 화면에 띄우기</button>
 	        		        </div>
 	        		    </div>
 			            
@@ -87,11 +77,17 @@
 		</div>
 	</div>
 <script>
-/* var str = $('.#textarea').val();
-
-str = str.split('<br/>').join("\r\n");
-
-$('#textarea').val(str); */
+function selectNotice(){
+	var sel = $(":input:radio[name=selected]:checked").val();
+	if(sel == undefined){
+		sel = "선택된 값이 없습니다";
+		alert(sel);
+		return false;
+	} else{
+		location.href="/admin/selectNotice/"+sel;
+		alert('확인');
+	}
+}
 </script>
 </body>
 </html>

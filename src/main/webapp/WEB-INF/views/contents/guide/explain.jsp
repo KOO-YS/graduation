@@ -54,10 +54,12 @@
           <!-- 포스트 -->
           <div class="col-md-9 blog-content">
             <blockquote class="bg-light">
-            	<button class="btn btn-outline-primary">정규해설</button>
-            	<button class="btn btn-outline-primary">경회루 특별관람 해설</button>
-            	<button class="btn btn-outline-primary">칠궁 관람해설</button>
-            	<div>	            	
+            	<button class="btn btn-outline-primary" onclick='location.href="#standard-exp"'>정규해설</button>
+            	<button class="btn btn-outline-primary" onclick='location.href="#special-exp"'>경회루 특별관람 해설</button>
+            	<button class="btn btn-outline-primary" onclick='location.href="#seven-exp"'>칠궁 관람해설</button>
+            </blockquote>
+            	<blockquote class="bg-light" id="standard-exp">
+            	<br>            	
 	           		<h5 class="content-title">＊정규해설</h5>
 	           			<ul>
            					<li>시간<br> ___table___</li>
@@ -70,6 +72,9 @@
            						<img alt="start-location" src="/static/images/start_location01.gif">
            					</li>
 	           			</ul>
+	           	</blockquote>
+	           	<blockquote class="bg-light" id="special-exp">
+	           	<br>
 	           		<h5 class="content-title">＊경회루 특별관람 해설</h5>
 	           			<ul>
            					<li>시간<br> ___table___</li>
@@ -81,7 +86,10 @@
            						<img alt="start-location" src="/static/images/start_location02.gif">
            					</li>
 	           			</ul>
-	           		<h5 class="content-title">＊칠궁 관람해설</h5>
+        		</blockquote>
+	           	<blockquote class="bg-light" id="seven-exp">
+	           	<br>
+	           		<h5 class="content-title" >＊칠궁 관람해설</h5>
 	           			<ul>
           					<li>관람일자 : 매주 화요일 ~ 토요일(주 5일 / 일요일, 월요일 휴궁)</li>
           					<li>관람요금 : 무료</li>
@@ -89,8 +97,7 @@
           					<li>관람 소요시간 : 50분(해설관람 30분 / 자유관람 20분)</li>
           					<li>관람방법<br> ___table___</li>	
 	           			</ul>
-            	</div>
-            </blockquote>
+            	</blockquote>
           </div>
           <!-- 포스트 끝 -->
         </div>
@@ -101,7 +108,6 @@
 	<c:import url="/WEB-INF/views/structure/footer.jsp"></c:import>
 
   </div> <!-- .site-wrap -->
-
    <script src="/static/js/jquery-3.3.1.min.js"></script>
   <script src="/static/js/jquery-migrate-3.0.1.min.js"></script>
   <script src="/static/js/jquery-ui.js"></script>

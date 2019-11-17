@@ -47,4 +47,13 @@
 		FROM notice_img
 		WHERE noticePk = #{noticePk}
 	</select>
+	<update id="setAllNotice">
+		UPDATE notice
+		SET selected = 0
+	</update>
+	<update id="selectNotice" parameterType="int">
+		UPDATE notice
+		SET selected = 1
+		WHERE pk = #{pk}
+	</update>
 </mapper>

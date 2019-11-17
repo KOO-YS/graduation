@@ -9,7 +9,7 @@ CREATE TABLE notice (
     writer VARCHAR(100) NOT NULL,
     content VARCHAR(10000) DEFAULT NULL,
     regdate TIMESTAMP DEFAULT NOW(),
-    viewCnt INT(11) DEFAULT 0,
+    selected TINYINT(1) DEFAULT 0,
     primary key (`pk`)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 

@@ -30,4 +30,8 @@ public interface AdminDao {
 
 	NoticeImgVO getNoticeImg(int pk);
 
+	int setAllNotice();
+
+	void selectNotice(int pk);
+
 }
