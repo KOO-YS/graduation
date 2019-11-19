@@ -6,6 +6,7 @@ import org.apache.ibatis.annotations.Mapper;
 
 import com.spring.heritage.vo.CoordVO;
 import com.spring.heritage.vo.GuidebookVO;
+import com.spring.heritage.vo.HistoryVO;
 import com.spring.heritage.vo.NoticeImgVO;
 import com.spring.heritage.vo.NoticeVO;
 
@@ -27,4 +28,6 @@ public interface ContentDao {
 	NoticeVO getSelected();
 
 	NoticeImgVO getSelectedImg();
+
+	List<HistoryVO> historyList();
 }

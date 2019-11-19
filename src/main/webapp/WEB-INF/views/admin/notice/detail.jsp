@@ -95,7 +95,7 @@ $(document).ready(function() {
 
 		
        $.ajax({
-              url: '/admin/insertNotice',
+              url: '/admin/updateNotice',
               type: 'POST',
               enctype: "multipart/form-data",
               data: formData,

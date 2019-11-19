@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.spring.heritage.dao.ContentDao;
 import com.spring.heritage.vo.CoordVO;
 import com.spring.heritage.vo.GuidebookVO;
+import com.spring.heritage.vo.HistoryVO;
 import com.spring.heritage.vo.NoticeImgVO;
 import com.spring.heritage.vo.NoticeVO;
 
@@ -45,8 +46,12 @@ public class ContentService {
 		return contentDao.getSelected();
 	}
 
-	public Object getSelectedImg() {
+	public NoticeImgVO getSelectedImg() {
 		return contentDao.getSelectedImg();
+	}
+
+	public List<HistoryVO> historyList() {
+		return contentDao.historyList();
 	}
 	
 	

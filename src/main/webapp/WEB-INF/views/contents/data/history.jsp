@@ -17,6 +17,64 @@
     <link rel="stylesheet" href="/static/css/aos.css">
 
     <link rel="stylesheet" href="/static/css/style.css">
+        <style>
+
+.history-tl-container ul.tl{
+	width: 70%;
+    margin:20px 0;
+    padding:0;
+    display:inline-block;
+}
+.history-tl-container ul.tl li{
+    list-style: none;
+    margin-left:30%;
+    min-height:50px;
+    
+    padding:0 0 50px 30px;
+    position:relative;
+    margin-top: 40px;
+    margin-bottom:10px;
+}
+/* 마지막 점 이후로 보더 끝 */
+/* .history-tl-container ul.tl li:last-child{ border-left: medium;} */  
+.history-tl-container ul.tl li::before{
+    position: absolute;
+    left: -10px;
+    top : 15px;
+    content: " ";
+    border: 8px solid rgba(255, 255, 255, 0.74);
+    border-radius: 500%;
+    background: #e81050;
+    height: 30px;
+    width: 30px;
+    transition: all 500ms ease-in-out;
+
+}
+.history-tl-container ul.tl li:hover::before{
+    border-color:  salmon;
+    transition: all 1000ms ease-in-out;
+}
+ul.tl li .item-title{
+    font-size : 15pt;
+    clear: right;
+    float: right;
+}
+ul.tl li .item-detail{
+    color:rgba(0,0,0,0.5);
+    font-size:12px;
+    clear: right;
+    float: right;
+}
+ul.tl li .timestamp{
+    font-weight: 700;
+    color: #8D8D8D;
+    clear: right;
+    float: right;
+  	width:100px;
+    text-align: right;
+    font-size: 15px;
+}
+    </style>
   </head>
   <body>
   
@@ -53,21 +111,41 @@
           <!-- 포스트 -->
           <div class="col-md-9 blog-content">
             <blockquote class="bg-light">
-            	<div class="card" style="width: 18rem;">
-				  <!-- <img class="card-img-top" src="/static/images/person_1.jpg" alt="Card image cap"> -->
-				  <div class="card-img-top" style="height:150px; background:pink;">1300년대</div>
-				  <div class="card-body">
-				    <ul class="card-text" style="list-style:none;">
-				    	<li>test</li>
-				    	<li>222</li>
-				    	<li>test</li>
-				    	<li>222</li>
-				    	<li>test</li>
-				    	<li>222</li>
-				    </ul>
-				  </div>
-				</div>
-            	
+            <h2 class="content-title" style=""> &emsp;&emsp; &emsp;&emsp; &emsp;&emsp;* 경복궁의 역사</h2>
+            	<div class="history-tl-container">
+			        <ul class="tl">
+			        <c:forEach var="his" items="${history}">
+			        <li class="tl-item" ng-repeat="item in retailer_history">
+			            <div class="timestamp">
+			                ${his.year}년대
+			            </div>
+			            <div class="item-title">${his.title }</div>
+			            <div class="item-detail">${his.detail }</div>
+			          </li>
+			        </c:forEach>
+			          <!-- <li class="tl-item" ng-repeat="item in retailer_history">
+			            <div class="timestamp">
+			                1300년대
+			            </div>
+			            <div class="item-title">경복궁 창건</div>
+			            <div class="item-detail">Don't forget the ring</div>
+			          </li>
+			          <li class="tl-item" ng-repeat="item in retailer_history">
+			            <div class="timestamp">
+			                1400년대
+			            </div>
+			            <div class="item-title">법궁 체제 확립</div>
+			            <div class="item-detail">Don't enter the caves!!</div>
+			          </li>
+			          <li class="tl-item" ng-repeat="item in retailer_history">
+			            <div class="timestamp">
+			                1500년대
+			              </div>
+			              <div class="item-title">화재 및 임진왜란으로 경복궁 소실</div>
+			            <div class="item-detail">Also, throw that Gollum too</div>
+			          </li> -->
+			        </ul>
+			      </div>
             </blockquote>
           </div>
           <!-- 포스트 끝 -->

@@ -28,7 +28,7 @@ public class ContentController {
 	@RequestMapping("/main")
 	public String goToMain(Model model) {
 		model.addAttribute("notice", contentService.getSelected());
-		model.addAttribute("noticeImg",contentService.getSelectedImg());
+		/* model.addAttribute("noticeImg",contentService.getSelectedImg()); */
 		return "main";
 	}
 
@@ -114,7 +114,8 @@ public class ContentController {
 	}
 	/* 경복궁의 역사 */
 	@RequestMapping("/data/history")
-	public String goToHistory() {
+	public String goToHistory(Model model) {
+		model.addAttribute("history", contentService.historyList());
 		return "contents/data/history";
 	}
 	/* 간행물 */

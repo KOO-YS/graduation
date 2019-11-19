@@ -6,5 +6,6 @@
    <a href="/admin/user" class="list-group-item list-group-item-action">User</a>
    <a href="/admin/reservation" class="list-group-item list-group-item-action">Reservation</a>
    <a href="/admin/brochure" class="list-group-item list-group-item-action">Brochure</a>
+   <a href="/admin/history" class="list-group-item list-group-item-action">History</a>
    <a href="#" class="list-group-item list-group-item-action">Settings</a>
 </div> 

@@ -6,6 +6,7 @@ import org.apache.ibatis.annotations.Mapper;
 
 import com.spring.heritage.vo.CoordVO;
 import com.spring.heritage.vo.GuidebookVO;
+import com.spring.heritage.vo.HistoryVO;
 import com.spring.heritage.vo.NoticeImgVO;
 import com.spring.heritage.vo.NoticeVO;
 
@@ -33,5 +34,11 @@ public interface AdminDao {
 	int setAllNotice();
 
 	void selectNotice(int pk);
+
+	void insertHistory(HistoryVO historyVo);
+
+	List<HistoryVO> historyList();
+
+	void deleteHistory(int year);
 
 }

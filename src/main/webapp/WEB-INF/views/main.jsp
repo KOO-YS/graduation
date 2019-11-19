@@ -64,8 +64,8 @@
         <div class="img-box">
           <span class="sub-title">경복궁</span>
           <h2>${notice.title}</h2>
-          <p>${notice.content }</p>
-          <p><a href="#" class="btn btn-outline-dark">Read More</a></p>
+          <p>${notice.content}</p>
+          <p><a href="/about/notice/${notice.pk}" class="btn btn-outline-dark">Read More</a></p>
         </div>
       </div>  
     </div>
@@ -97,7 +97,7 @@
               <div>
                 <h3>관람코스</h3>
                 <p>광화문에서부터 신무문까지 관람코스를 소개합니다</p>
-                <p><a href="/guide/roles">자세히보기</a></p>
+                <p><a href="/guide/course">자세히보기</a></p>
               </div>
             </div>
           </div>
@@ -107,7 +107,7 @@
               <div>
                 <h3>해설안내</h3>
                 <p>해설사의 스토리텔링을 들으며 경복궁을 둘러볼 수 있습니다</p>
-                <p><a href="/guide/roles">자세히보기</a></p>
+                <p><a href="/guide/explain">자세히보기</a></p>
               </div>
             </div>
           </div>
@@ -119,7 +119,7 @@
               <div>
                 <h3>오시는길</h3>
                 <p>경복궁까지 오시는 길을 확인할 수 있습니다</p>
-                <p><a href="/guide/roles">자세히보기</a></p>
+                <p><a href="/guide/location">자세히보기</a></p>
               </div>
             </div>
           </div>
@@ -129,7 +129,7 @@
               <div>
                 <h3>편의시설 안내</h3>
                 <p>편의시설 정보와 권역을 확인할 수 있습니다</p>
-                <p><a href="/guide/roles">자세히보기</a></p>
+                <p><a href="/guide/facility">자세히보기</a></p>
               </div>
             </div>
           </div>
@@ -139,7 +139,7 @@
               <div>
                 <h3>주변 둘러보기</h3>
                 <p>경복궁 주변의 고궁 및 기타 관람에 대해 확인할 수 있습니다.</p>
-                <p><a href="/guide/roles">자세히보기</a></p>
+                <p><a href="/guide/near">자세히보기</a></p>
               </div>
             </div>
           </div>
@@ -181,7 +181,7 @@
                   <div>
                     <h3>경회루 특별관람 예약</h3>
                     <p>4월부터 10월까지 진행되는 경회루 특별관람을 미리 예약하실 수 있습니다</p>
-                    <p class="mb-0"><a href="/tour" class="btn btn-primary btn-sm">예약하기</a></p>
+                    <p class="mb-0"><a href="/reservation/special" class="btn btn-primary btn-sm">예약하기</a></p>
                   </div>
                 </div>
               </div>
@@ -191,7 +191,7 @@
                   <div>
                     <h3>한국어 단체해설 예약</h3>
                     <p>해설사의 스토리텔링과 함께 경복궁을 둘러볼 수 있습니다</p>
-                    <p class="mb-0"><a href="/tour" class="btn btn-primary btn-sm">예약하기</a></p>
+                    <p class="mb-0"><a href="/reservation/korean" class="btn btn-primary btn-sm">예약하기</a></p>
                   </div>
                 </div>
               </div>

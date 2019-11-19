@@ -8,6 +8,12 @@ public class NoticeVO {
 	String regdate;
 	int selected;
 	
+	NoticeImgVO noticeImgVo;
+	
+	/*
+	 * int noticePk; String saveName;
+	 */
+	
 	public int getPk() {
 		return pk;
 	}
@@ -45,6 +51,12 @@ public class NoticeVO {
 		this.selected = selected;
 	}
 	
+	public NoticeImgVO getNoticeImgVo() {
+		return noticeImgVo;
+	}
+	public void setNoticeImgVo(NoticeImgVO noticeImgVo) {
+		this.noticeImgVo = noticeImgVo;
+	}
 	@Override
 	public String toString() {
 		return "NoticeVO [pk=" + pk + ", title=" + title + ", writer=" + writer + ", content=" + content + ", regdate="

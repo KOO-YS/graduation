@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.spring.heritage.dao.AdminDao;
 import com.spring.heritage.vo.CoordVO;
 import com.spring.heritage.vo.GuidebookVO;
+import com.spring.heritage.vo.HistoryVO;
 import com.spring.heritage.vo.NoticeImgVO;
 import com.spring.heritage.vo.NoticeVO;
 
@@ -81,5 +82,18 @@ public class AdminService {
 		if(before>0) {
 			adminDao.selectNotice(pk);
 		}
+	}
+
+	public void insertHistory(HistoryVO historyVo) {
+		adminDao.insertHistory(historyVo);
+		
+	}
+
+	public List<HistoryVO> historyList() {
+		return adminDao.historyList();
+	}
+
+	public void deleteHistory(int year) {
+		adminDao.deleteHistory(year);
 	}
 }

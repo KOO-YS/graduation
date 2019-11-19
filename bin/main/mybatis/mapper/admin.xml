@@ -56,4 +56,18 @@
 		SET selected = 1
 		WHERE pk = #{pk}
 	</update>
+	<insert id="insertHistory" parameterType="com.spring.heritage.vo.HistoryVO">
+		INSERT INTO history (year, title, detail)
+		VALUES (#{year}, #{title}, #{detail})
+	</insert>
+	<select id="historyList" resultType="com.spring.heritage.vo.HistoryVO">
+		SELECT
+			*
+		FROM history
+		ORDER BY year
+	</select>
+	<delete id="deleteHistory">
+		DELETE FROM history
+		WHERE year = #{year}
+	</delete>
 </mapper>

@@ -10,10 +10,30 @@
 		WHERE selected = 1;
 	</select>
 	<!-- 대표 공지사항 이미지 -->
-	<!-- <resultMap type="NoticeVO" id="NoticeVO">
-		<result column="selected" property="selected"/>
-		<result column="pk" property=""/>
+	<!-- <resultMap type="com.spring.heritage.vo.NoticeVO" id="noticeVo">
+		<result column="pk" property="nt_pk"/>
+		<result column="selected" property="selected"/>		
+	</resultMap>
+	<resultMap type="com.spring.heritage.vo.NoticeImgVO" id="imgVo">
+		<result column="noticePk" property="noticePk"/>
+		<result column="saveName" property="saveName"/>
 	</resultMap> -->
+	<!-- <resultMap type="com.spring.heritage.vo.NoticeVO" id="noticeMap">
+		<id column="pk" property="pk"/>
+		<result column="selected" property="selected"/>
+		<association javaType="com.spring.heritage.vo.NoticeImgVO" property="noticeImgVo">
+			<id column="pk" property="pk"/>
+			<result column="noticePk" property="noticePk"/>
+			<result column="saveName" property="saveName"/>
+			
+		</association>		
+	</resultMap>
+	<select id="getSelectedImg" resultMap="noticeMap">
+	 	SELECT i.saveName, i.noticePk
+	 	FROM notice_img i
+	 	JOIN notice n ON(i.noticePk = n.pk)
+	 	WHERE n.selected =1
+ 	</select> -->
 	<select id="getNotice" resultType="com.spring.heritage.vo.NoticeVO">
 		SELECT *
 			FROM notice
@@ -44,5 +64,11 @@
 	<select id="getCoord" resultType="com.spring.heritage.vo.CoordVO">
 		SELECT *
 			FROM coord
+	</select>
+	<select id="historyList" resultType="com.spring.heritage.vo.HistoryVO">
+		SELECT
+			*
+		FROM history
+		ORDER BY year
 	</select>
 </mapper>

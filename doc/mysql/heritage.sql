@@ -31,8 +31,10 @@ CREATE TABLE coord (
     coordX DECIMAL(10, 8) DEFAULT 37.577976,
     coordY DECIMAL(11, 8) DEFAULT 126.975189
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 -- 좌표 기본값 설정 
 INSERT INTO coord VALUES (37.577976, 126.975189);
+
 -- 가이드북 첨부
 DROP TABLE IF EXISTS guidebook;
 CREATE TABLE guidebook (
@@ -45,6 +47,7 @@ CREATE TABLE guidebook (
     updateTime TIMESTAMP DEFAULT NOW(),
     PRIMARY KEY (pk)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 -- 경회루 특별관람 예약
 DROP TABLE IF EXISTS sp_tour;
 CREATE TABLE sp_tour (
@@ -55,6 +58,7 @@ CREATE TABLE sp_tour (
     visitDt TIMESTAMP DEFAULT NULL,
     PRIMARY KEY (pk)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 -- 한국어 단체관람 예약
 DROP TABLE IF EXISTS kr_tour;
 CREATE TABLE kr_tour (
@@ -64,4 +68,13 @@ CREATE TABLE kr_tour (
     bookDt TIMESTAMP DEFAULT NOW(),
     visitDt TIMESTAMP DEFAULT NULL,
     PRIMARY KEY (pk)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- 경복궁의 역사
+DROP TABLE IF EXISTS history;
+CREATE TABLE history (
+	year INT(11) NOT NULL,
+    title VARCHAR(100) NOT NULL,
+    detail VARCHAR(100) NOT NULL,
+    primary key(`year`)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;

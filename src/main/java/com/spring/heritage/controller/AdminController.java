@@ -18,6 +18,7 @@ import com.spring.heritage.service.AdminService;
 import com.spring.heritage.util.UploadFileUtil;
 import com.spring.heritage.vo.CoordVO;
 import com.spring.heritage.vo.GuidebookVO;
+import com.spring.heritage.vo.HistoryVO;
 import com.spring.heritage.vo.NoticeImgVO;
 import com.spring.heritage.vo.NoticeVO;
 
@@ -82,6 +83,13 @@ public class AdminController {
 	public String goToNoticeDetail(@PathVariable int pk, Model model) {
 		model.addAttribute("detail", adminService.getNoticeDetail(pk));
 		model.addAttribute("img", adminService.getNoticeImg(pk));
+		return "admin/notice/detail";
+	}
+	/* 공지사항 변경 */
+	@RequestMapping(value="/admin/updateNotice", method = RequestMethod.POST)
+	@ResponseBody
+	public String updateNotice() {
+		
 		return "admin/notice/detail";
 	}
 	/* 공지사항 선택값 */
@@ -165,5 +173,33 @@ public class AdminController {
 		
 		String msg = adminService.insertBrochure(guideVo);
 		return "admin/brochure";
+	}
+	/* 경복궁 역사 관리 페이지 */
+	@RequestMapping(value="/admin/history")
+	public String goToHistrory(Model model) {
+		model.addAttribute("history", adminService.historyList());
+		return "admin/history/history";
+	}
+	/* 경복궁 역사 추가 */
+	@RequestMapping(value="/admin/insertHistory")
+	public String insertHistory(HttpServletRequest request) {
+		int year = Integer.parseInt(request.getParameter("year"));
+		String title = request.getParameter("title");
+		String detail = request.getParameter("detail");
+		
+		HistoryVO historyVo = new HistoryVO();
+		
+		historyVo.setYear(year);
+		historyVo.setTitle(title);
+		historyVo.setDetail(detail);
+		
+		adminService.insertHistory(historyVo);
+		return "redirect:/admin/history";
+	}
+	/* 경복궁 역사 삭제 */
+	@RequestMapping(value="/admin/deleteHistory/{year}")
+	public String deleteHistory(@PathVariable int year) {
+		adminService.deleteHistory(year);
+		return "redirect:/admin/history";
 	}
 }
