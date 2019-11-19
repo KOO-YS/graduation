@@ -67,8 +67,8 @@
 			         <c:forEach var="bro" items="${brochure}">
 			            <div class="col-md-6 col-lg-6 mb-6 mb-lg-6">
 				            <div class="h-entry">
-				              <a href="single.html"><img src="/static/images/img_1.jpg" alt="Image" class="img-fluid"></a>
-				              <h2 class="font-size-regular"><a href="single.html">${bro.title}</a></h2>
+				              <img src="/static/images/slide_3.jpg" alt="Image" class="img-fluid">
+				              <h2 class="font-size-regular"><a onclick="fileDown('${bro.pk}')" >${bro.title}</a></h2>
 				              <div class="meta mb-4">
 				              	${bro.lang}
 				              	<span class="mx-2">&bullet;</span> ${bro.updateTime }
@@ -80,10 +80,6 @@
 			         
 	            </div>
 	            </blockquote>
-	            <div class="pt-5">
-	              <p>Categories:  <a href="#">Design</a>, <a href="#">Events</a>  Tags: <a href="#">#html</a>, <a href="#">#trends</a></p>
-	            </div>
-			
 	            
 	          </div>
 	          <!-- 포스트 끝 -->

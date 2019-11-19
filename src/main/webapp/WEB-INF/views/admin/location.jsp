@@ -31,7 +31,7 @@
 			                    <h4>location info</h4>
 			                </div>
 			                <div class="col-md-6">
-			                    <button type="button" class="btn btn-sm btn-primary">sample button</button>
+			                    
 			                </div>
 			                
 			            </div>

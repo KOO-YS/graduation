@@ -4,7 +4,7 @@
   <div class="sidebar-box bg-light">
     <div class="categories">
       <h3>Categories</h3>
-      <li><a href="/guide/roles">관람 규칙 및 규정 <span>(개수)</span></a></li>
+      <li><a href="/guide/roles">관람 규칙 및 규정</a></li>
       <li><a href="/guide/course">관람코스 <span></span></a></li>
       <li><a href="/guide/explain">해설안내 <span></span></a></li>
       <li><a href="/guide/location">오시는길 <span></span></a></li>

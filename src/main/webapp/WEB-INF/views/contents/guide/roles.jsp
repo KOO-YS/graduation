@@ -76,12 +76,7 @@
             		<li>경복궁 경내 전 지역은 금연구역으로 하며, 궁능유적기관의 장은 흡연자에 대해 관람중지, 퇴장 등 필요한 조치를 취할 수 있다.</li>
             	</ul>
             </blockquote>
-
-            <div class="pt-5">
-              <p>Categories:  <a href="#">Design</a>, <a href="#">Events</a>  Tags: <a href="#">#html</a>, <a href="#">#trends</a></p>
-            </div>
 		
-            
           </div>
           <!-- 포스트 끝 -->
         </div>
